@@ -895,19 +895,28 @@ const shopCategories = [
 ];
 
 let shopCurrent = 0;
+const shopState = {}; // Guarda el estado de tachado por categoría e índice
 
 function renderShop() {
   const cat = shopCategories[shopCurrent];
+  if (!shopState[shopCurrent]) shopState[shopCurrent] = {};
   let html = '<div class="pn-shop-list">';
   cat.items.forEach((item, i) => {
+    const done = shopState[shopCurrent][i] ? ' done' : '';
     html += `
-      <div class="pn-shop-item ${cat.cls}" onclick="this.classList.toggle('done')">
+      <div class="pn-shop-item ${cat.cls}${done}" onclick="toggleShopItem(this, ${shopCurrent}, ${i})">
         <div class="pn-shop-item-name">${item.name}</div>
         <div class="pn-shop-item-qty">${item.qty}</div>
       </div>`;
   });
   html += '</div>';
   document.getElementById("shopView").innerHTML = html;
+}
+
+function toggleShopItem(el, catIdx, itemIdx) {
+  el.classList.toggle('done');
+  if (!shopState[catIdx]) shopState[catIdx] = {};
+  shopState[catIdx][itemIdx] = el.classList.contains('done');
 }
 
 function buildShopTabs() {
