@@ -34,7 +34,7 @@ Si algo debería cambiar en el estándar general (no solo para Javier), no se co
 - No cambies convenciones establecidas (nombres de archivo, rutas) por tu cuenta mientras resuelves un problema; pregunta antes.
 - Después de editar: valida el JS (`node --check` sobre el script extraído, o abre el HTML y revisa la consola). Dentro de strings JS solo `\n` como escape; un salto de línea literal rompe el script.
 - Imágenes embebidas en HTML en base64 (portabilidad entre visor, local y GitHub Pages).
-- Commits solo cuando Guille lo pida, con mensaje claro. No hagas push sin que lo pida.
+- Cuando Guille te da pautas de cambio para el repo, puedes hacer commit (mensaje claro) en tu rama de trabajo, push de esa rama y abrir un PR contra `main`. Guille lo revisa y hace el merge. Nunca hagas merge ni push directo a `main`. Si la rama ya se fusionó, reiníciala desde `main` antes de seguir. Sin pautas de cambio (preguntas, revisiones, exploración), no commitees.
 
 ## Redacción del contenido
 
@@ -50,24 +50,33 @@ Si algo debería cambiar en el estándar general (no solo para Javier), no se co
 - Cada dato nuevo muestra la **comparativa con la medición anterior** con color verde (mejora) o rojo (empeora). Guille indica qué énfasis dar en las impresiones (p. ej. valor Z muscular, LDL); respétalo.
 - Impresiones: concisas, sin sobreexplicar por qué se consiguieron los resultados. Colores semánticos de puntos: verde logro, azul cambio de objetivo, ámbar vigilar, coral alerta.
 - Suplementación: sin nombres de marca (p. ej. pastillas de sodio). Geles: ofrecer también la opción de 55–60 g de CHO. Para guayaba, usar solo la forma sólida.
-- Mediciones registradas hasta ahora: 06/05, 15/06 y 25/08/2026. Próxima medición directa: la semana siguiente a la sesión online del 1/10/2026.
+- Mediciones registradas hasta ahora: 06/05, 15/06 y 25/08/2026. Próxima medición directa: la semana siguiente a la sesión online del 1/10/2026. **Próxima revisión: miércoles 14/10/2026 a las 13:00 h** (ya reflejada en el HTML; si cambia la fecha o hay una nueva, actualizar texto y botón de calendario, y sin fecha exacta dejar el botón atenuado).
 
 ## Contexto de Javier
 
 - Psicólogo, vive en Valencia. Cliente de NutriLogos con revisiones periódicas con Guille (la del 1/10/2026 fue online).
-- **Objetivo deportivo:** media maratón (21K) de Valencia el **25 de octubre de 2026**.
+- **Objetivo deportivo:** media maratón (21K) de Valencia el **25 de octubre de 2026** (domingo, de buena mañana). **Objetivo de marca: bajar de 1h45'** (≈ 4:58–4:59 min/km), acordado en la consulta online del 1/10/2026.
 - **Objetivo de composición:** ganancia muscular / recomposición con ingesta normocalórica o ligero superávit (el plan inicial era de déficit; se remodeló tras la bioimpedancia). Compagina carrera con fuerza.
 - **Semana tipo:** jueves = **Fuerza** (cambiado de CrossFit; no debe quedar ningún "crossfit" residual en banner, notas, tabla semanal ni suplementación). Domingo = día de descanso con batch cooking opcional y recordatorio de suplementación.
-- **Referencia de ritmo para el 21K (estimación de coaching, no dato medido):** 5:30–5:35 min/km, marca ~1h56'–1h58'. Se ajusta según sensaciones tras el simulacro y el tapering.
-- **Simulacro 15K Nocturna Valencia:** sábado 26/09/2026, salida 22:30 h. Ya ejecutado; su estrategia nutricional (viernes, sábado, pre / intra / post-carrera) está en `documentos/Simulacro_15K_Javier_Calduch.pdf`, enlazado desde la sección "Próximos eventos".
+- **Referencia de ritmo para el 21K:** la estimación inicial de coaching (5:30–5:35 min/km, ~1h56'–1h58') **queda sustituida** por el objetivo de bajar de 1h45'. Sigue siendo un objetivo de coaching, no un dato medido; se ajusta con las sensaciones de los entrenos y el tapering.
+- **Simulacro 15K Nocturna Valencia (26/09/2026, 22:30 h):** ejecutado. Hubo más fatiga de la esperada, pero con calor, humedad y de noche, condiciones que no serán las de la media (de buena mañana). Su PDF de estrategia se retiró del repo (ya no se usa y no está enlazado).
+- **Tirada larga de 19K (30/09/2026):** muy buenas sensaciones, a una hora más parecida a la de la carrera. Es la referencia más fiable de cara a la media.
+- **Calendario de entrenos hasta la carrera (solo informativo; no se ajusta nada de momento):**
+  - Quedan antes de la semana previa: series de 9K, rodaje de 10K y tirada de 14K (**test de sudoración**: Javier pasará peso antes y después, líquido ingerido, duración e intensidad).
+  - Semana previa: series de 6×300 m, rodaje de 10K y tirada de 11K.
+  - Semana de carrera: activación el miércoles (8K), fuerza de activación en varios días y paseo el viernes.
+- **Ajustes de comida acordados el 1/10/2026:**
+  - **Avena: nunca antes de entrenar.** Se aplica en el **documento de competición**, no en el plan base por ahora.
+  - **Arroz:** le suele causar hinchazón. Se **reduce algo en el plan base** (menos apariciones y/o menos cantidad, con sustitutos como quinoa, patata, boniato, cuscús o pasta). **Aplicado en el HTML el 2/10/2026:** el arroz basmati pasa de 4 comidas a 2 (jueves cena y viernes almuerzo, 80 g en crudo cada una; el batch del domingo los cubre). Miércoles cena (curry) usa 200 g de patata en crudo y el sábado almuerzo usa cuscús integral precocinado; en intraentreno el vasito de arroz se cambió por cuscús o quinoa. Si se vuelve a tocar, mantener coherentes días, tabla `#printArea`, batch y lista de compra.
+  - **Fibra:** controlarla un poco porque pasa por épocas de estreñimiento. Se consulta aparte; no tocar el plan hasta que Guille lo decida.
+  - Pauta de líquidos/sodio e hidratos por hora para la media: a la espera de los datos del test de sudoración.
 - Calcio y vitamina D: hay pauta específica en el plan; no la retires al editar suplementación.
 
 ## Excepciones de Javier respecto a la plantilla v5.0
 
 Son decisiones conscientes de Guille; no las "corrijas" sin preguntar:
 
-- **"Próximos eventos"** va justo después del bloque Objetivo (la plantilla coloca las secciones personalizadas antes de "Próxima revisión"). Contiene el botón al PDF del simulacro.
-- El PDF del simulacro se enlaza con ruta relativa a `documentos/` mientras la plantilla propone `./assets/`. Comprueba en qué carpeta está realmente el archivo antes de tocar cualquier `href`, y mantén la ruta que funcione en GitHub Pages.
+- **"Próximos eventos"** va justo después del bloque Objetivo (la plantilla coloca las secciones personalizadas antes de "Próxima revisión"). Tras el simulacro se retiró y **ahora contiene el 21K de Valencia (domingo 25/10/2026)**, **sin documento incrustado ni botón a PDF** (hecho el 2/10/2026): Guille preparará la estrategia de competición de otra forma, y la tarjeta del evento debe dejar claro que ese contenido llegará de forma parecida a como se hizo con el simulacro. Si en el futuro se enlaza un archivo, comprueba su carpeta real antes de tocar cualquier `href` y mantén la ruta que funcione en GitHub Pages (el repo usa `documentos/`; la plantilla propone `./assets/`).
 - **Lista de compra:** el estado tachado se conserva **dentro de la sesión** al cambiar de pestaña (objeto JS `shopState`), pero no entre sesiones, para evitar desincronizaciones cuando el HTML se actualiza en GitHub. Verifica en el archivo cómo está implementado antes de modificarlo; la v5.0 de referencia solo usa `classList.toggle('done')` sin memoria al cambiar de pestaña.
 - El HTML nació sobre v4.x y puede conservar restos (bloque "Control de peso", `<hr>`, espaciados antiguos). Alinearlo con v5.0 solo cuando Guille lo pida; no lo hagas de oficio dentro de otra tarea.
 - Incluye recetas propias en el acordeón (ensalada de cuscús con gazpacho, gazpacho de remolacha, entre otras) y una sección de hidratación/intraentreno.
