@@ -245,6 +245,21 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════
+     PRÓXIMOS EVENTOS
+════════════════════════════════════════════════ -->
+<div style="margin-bottom:2rem;">
+  <div class="section-label">Próximos eventos</div>
+  <div style="border:1px solid #e5e5e5;border-radius:12px;padding:1rem 1.25rem;background:#fafafa;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+    <div style="font-size:26px;">🏃‍♂️</div>
+    <div style="flex:1;min-width:220px;">
+      <div style="font-size:14px;font-weight:600;color:#111;">Media Maratón de Valencia (21K)</div>
+      <div style="font-size:12px;color:#888;margin-top:2px;">Domingo 25 de octubre de 2026 · Objetivo: bajar de 1 h 45 min</div>
+      <div style="font-size:12px;color:#555;margin-top:6px;line-height:1.5;">Tu estrategia nutricional para la carrera (días previos, pre, intra y post) llegará en un documento aparte, de forma parecida a como se hizo con el simulacro.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
      PERFIL DE LA PERSONA
 ════════════════════════════════════════════════ -->
 <div class="pn-perfil">
@@ -474,7 +489,7 @@
           <td style="background:#f3fdf8;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Ensalada de cuscús con gazpacho y tofu</td>
           <td style="background:#f3fdf8;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Quinoa con garbanzos, boniato y tahini</td>
           <td style="background:#f3fdf8;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Seitán con arroz basmati y verduras al wok</td>
-          <td style="background:#f3fdf8;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Arroz basmati con edamame y verduras</td>
+          <td style="background:#f3fdf8;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Cuscús integral con edamame y verduras</td>
           <td style="background:#f3fdf8;padding:8px 10px;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Estofado de lentejas con pan integral</td>
         </tr>
 
@@ -499,7 +514,7 @@
           </td>
           <td style="background:#fdf8ff;padding:8px 10px;border-right:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Lentejas estofadas con boniato y verduras</td>
           <td style="background:#fdf8ff;padding:8px 10px;border-right:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Tofu a la plancha con patatas y brócoli</td>
-          <td style="background:#fdf8ff;padding:8px 10px;border-right:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Curry de garbanzos con espinacas y arroz</td>
+          <td style="background:#fdf8ff;padding:8px 10px;border-right:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Curry de garbanzos con espinacas y patata</td>
           <td style="background:#fdf8ff;padding:8px 10px;border-right:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Poke bowl de tofu con edamame y miso</td>
           <td style="background:#fdf8ff;padding:8px 10px;border-right:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Tofu al horno con boniato y rúcula</td>
           <td style="background:#fbeaf0;padding:8px 10px;border-right:1px solid #eee;text-align:center;color:#72243E;font-style:italic;line-height:1.4;">Libre</td>
@@ -604,9 +619,9 @@ const days = [
         desc:"3 tortitas de arroz + 2 cdas. de crema de cacahuete 100% + 1 plátano en rodajas encima. 1 kiwi aparte.",
         note:"El kiwi es excelente fuente de vitamina C, que facilita la absorción del hierro vegetal de las legumbres de los otros días. La crema de cacahuete aporta proteína y grasas saludables de calidad." },
       { type:"Ce", time:"20:30–21:30",
-        name:"Curry de garbanzos con espinacas y arroz basmati",
+        name:"Curry de garbanzos con espinacas y patata",
         tags:[],
-        desc:"200 g de garbanzos cocidos (de bote, escurridos) + espinacas frescas (puñado grande) + 150 ml de crema de soja + 200 g de tomate triturado + curry en polvo + cúrcuma + comino. 70 g de arroz basmati en crudo (hervir según indicaciones del paquete). Ensalada verde con 1 cdita. de AOVE.",
+        desc:"200 g de garbanzos cocidos (de bote, escurridos) + espinacas frescas (puñado grande) + 150 ml de crema de soja + 200 g de tomate triturado + curry en polvo + cúrcuma + comino. 200 g de patata en crudo cortada en dados pequeños, cocida 15–20 min en la propia salsa. Ensalada verde con 1 cdita. de AOVE.",
         note:"Los garbanzos aportan calcio vegetal (~80 mg/100 g). La cúrcuma tiene efecto antiinflamatorio relevante con el volumen de entrenamiento actual. Hacer el doble de curry si se quiere tener para el jueves." }
     ]
   },
@@ -642,7 +657,7 @@ const days = [
   /* ─── VIERNES / FUERZA ─── */
   {
     short:"Vie", full:"Viernes", sport:"🏋️ Fuerza", sportClass:"fuerza",
-    sportBanner:"Día de fuerza — desayuno contundente. Hacer arroz extra en el almuerzo para el sábado. Preparar overnight oats del sábado esta noche. ~2.400 kcal · ~100 g proteína.",
+    sportBanner:"Día de fuerza — desayuno contundente. Preparar overnight oats del sábado esta noche. ~2.400 kcal · ~100 g proteína.",
     meals:[
       { type:"D", time:"7:00–8:30",
         name:"Tostadas integrales con tortilla de garbanzo (o huevo) y aguacate",
@@ -653,7 +668,7 @@ const days = [
         name:"Seitán salteado con arroz basmati y verduras al wok",
         tags:["extra"],
         desc:"180 g de seitán cortado en tiras, salteado con tamari + ajo + jengibre rallado. 80 g de arroz basmati en crudo (hervir según indicaciones del paquete). Verduras al wok: pimiento + calabacín + cebolla + zanahoria con AOVE y especias orientales. 1 cda. de semillas de sésamo.",
-        note:"🥡 Cocer el doble de arroz — el sobrante (sin saltear) se guarda en nevera y es la base del almuerzo del sábado. El arroz basmati aguanta 4 días en nevera perfectamente." },
+        note:"Si hiciste batch el domingo, usa el arroz basmati ya cocido (aguanta 4 días en nevera) y solo saltea el seitán y las verduras." },
       { type:"Me", time:"17:00–17:30",
         name:"Smoothie de avena, plátano y crema de cacahuete",
         tags:[],
@@ -679,9 +694,9 @@ const days = [
         desc:"60 g de copos de avena + 250 ml de bebida vegetal enriquecida en calcio + 125 g de yogur de soja + 2 cdas. de mix de semillas (lino, chía, calabaza) + 1 cdita. de miel + un puñado de frutos rojos. Preparado el viernes por la noche.",
         note:"El más abundante de los overnight oats de la semana — el rodaje del sábado suele ser el más largo. El mix de semillas aporta omega-3 y calcio adicional." },
       { type:"C", time:"13:30–14:30",
-        name:"Arroz basmati del viernes con edamame y verduras salteadas",
-        tags:["batch"],
-        desc:"Arroz basmati sobrante del viernes (calentar en micro 2 min) + 100 g de edamame o 200 g de garbanzos cocidos (de bote, escurridos) + verduras salteadas al gusto (pimiento, calabacín, zanahoria) + 1 cdita. de tamari + 1 cdita. de AOVE. 125 g de yogur de soja o Alpro con 1 cdita. de miel.",
+        name:"Cuscús integral con edamame y verduras salteadas",
+        tags:[],
+        desc:"1 vasito de cuscús integral precocinado (125 g, hidratar 5 min) + 100 g de edamame o 200 g de garbanzos cocidos (de bote, escurridos) + verduras salteadas al gusto (pimiento, calabacín, zanahoria) + 1 cdita. de tamari + 1 cdita. de AOVE. 125 g de yogur de soja o Alpro con 1 cdita. de miel.",
         note:"Almuerzo de 10 min post-rodaje sin cocinar nada desde cero. Si sobró curry del miércoles, es otra opción perfecta para hoy." },
       { type:"Me", time:"17:00–17:30",
         name:"Kiwis + almendras + yogur de soja",
@@ -704,7 +719,7 @@ const days = [
     batchCooking:{
       title:"🥘 Batch cooking del domingo — opcional pero recomendado",
       items:[
-        "Arroz basmati (160 g en crudo → ~320 g cocido): cocer según indicaciones del paquete → nevera. Para viernes almuerzo + sábado almuerzo.",
+        "Arroz basmati (160 g en crudo → ~320 g cocido): cocer según indicaciones del paquete → nevera. Para jueves cena + viernes almuerzo.",
         "Boniato (600–700 g): cortar en cubos, hornear 35 min a 200°C → nevera. Para lunes almuerzo + jueves almuerzo + viernes cena.",
         "Tofu marinado (1–2 bloques firmes): cortar en cubos, marinar en tamari + ajo + jengibre, guardar en nevera → lunes almuerzo + viernes cena.",
         "2 tarros de overnight oats: preparar para lunes y martes noche mientras se cocina.",
@@ -835,13 +850,13 @@ const shopCategories = [
       { name: "Copos de avena", qty: "~400 g", note: "Desayunos y tortitas. Varios días." },
       { name: "Pan integral o masa madre", qty: "1 barra (~600 g)", note: "Desayunos, meriendas, domingo almuerzo." },
       { name: "Pasta integral (cruda)", qty: "80 g", note: "Martes almuerzo." },
-      { name: "Arroz basmati (crudo)", qty: "160 g", note: "Viernes almuerzo (doble para sábado). Seguir indicaciones del paquete." },
-      { name: "Cuscús integral vasito precocinado", qty: "1 vasito (125 g)", note: "Lunes almuerzo. Solo hidratar 5 min, sin cocción." },
+      { name: "Arroz basmati (crudo)", qty: "160 g", note: "Jueves cena (80 g) + viernes almuerzo (80 g). Seguir indicaciones del paquete." },
+      { name: "Cuscús integral vasito precocinado", qty: "2 vasitos (125 g c/u)", note: "Lunes y sábado almuerzo. Solo hidratar 5 min, sin cocción." },
       { name: "Cuscús (seco)", qty: "200 g", note: "Miércoles almuerzo (ensalada con gazpacho). Hidratar con gazpacho, sin cocción." },
       { name: "Quinoa vasito precocinada", qty: "1 vasito (125 g)", note: "Jueves almuerzo. Abrir y mezclar directamente." },
       { name: "Tortitas de arroz", qty: "1 paquete", note: "Miércoles merienda." },
       { name: "Boniato", qty: "600–700 g", note: "Batch cooking domingo. Lunes almuerzo, jueves almuerzo, viernes cena." },
-      { name: "Patata pequeña", qty: "~400 g", note: "Martes cena (200 g) + domingo almuerzo (100 g)." }
+      { name: "Patata pequeña", qty: "~600 g", note: "Martes cena (200 g) + miércoles cena (200 g, curry) + domingo almuerzo (100 g)." }
     ]
   },
   {
@@ -1004,7 +1019,7 @@ function buildShopTabs() {
     </div>
     <div style="padding:1rem 1.25rem;background:#fff;">
       <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Pre-salida (2–3h antes)</div>
-      <p style="font-size:13px;color:#444;margin-bottom:1rem;line-height:1.6;">2–3 g/kg CHO → <strong>125–190 g CHO</strong>. Ej: plato de pasta o arroz + fruta.</p>
+      <p style="font-size:13px;color:#444;margin-bottom:1rem;line-height:1.6;">2–3 g/kg CHO → <strong>125–190 g CHO</strong>. Ej: plato de pasta o cuscús + fruta.</p>
       <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Intraentreno — por horas</div>
       <div style="display:grid;gap:8px;margin-bottom:1rem;">
         <div style="background:#f9fcf5;border:1px solid #C0DD97;border-radius:8px;padding:0.75rem 1rem;">
@@ -1017,7 +1032,7 @@ function buildShopTabs() {
         </div>
       </div>
       <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Post (primeros 30 min)</div>
-      <p style="font-size:13px;color:#444;line-height:1.6;">1–1,2 g/kg CHO alto IG → <strong>63–76 g CHO</strong>. Ej: vasito de arroz precocinado + plátano grande + yogur de soja.</p>
+      <p style="font-size:13px;color:#444;line-height:1.6;">1–1,2 g/kg CHO alto IG → <strong>63–76 g CHO</strong>. Ej: vasito de cuscús o quinoa precocinado + plátano grande + yogur de soja.</p>
       <p style="font-size:12px;color:#888;border-left:2px solid #C0DD97;padding-left:8px;margin-top:8px;line-height:1.5;">Opción isotónica casera: 500 ml agua + 30 g azúcar + 1 cda. miel + ½ cdita. sal. Aporta glucosa+fructosa y equivale en CHO a la comercial — válida si no tienes IsoDrink a mano.</p>
     </div>
   </div>
@@ -1046,7 +1061,7 @@ function buildShopTabs() {
         </div>
       </div>
       <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Post (primeros 30 min)</div>
-      <p style="font-size:13px;color:#444;line-height:1.6;">Igual que Modelo A: 63–76 g CHO. Plátano + vasito de arroz precocinado + yogur de soja.</p>
+      <p style="font-size:13px;color:#444;line-height:1.6;">Igual que Modelo A: 63–76 g CHO. Plátano + vasito de cuscús o quinoa precocinado + yogur de soja.</p>
       <p style="font-size:12px;color:#888;border-left:2px solid #B5D4F4;padding-left:8px;margin-top:8px;line-height:1.5;">Opción isotónica casera: 500 ml agua + 30 g azúcar + 1 cda. miel + ½ cdita. sal.</p>
     </div>
   </div>
@@ -1095,10 +1110,10 @@ function buildShopTabs() {
   <div style="display:flex;align-items:center;gap:14px;background:#fafafa;border:1px solid #e5e5e5;border-radius:12px;padding:1rem 1.25rem;flex-wrap:wrap;">
     <div style="font-size:28px;">📅</div>
     <div style="flex:1;min-width:200px;">
-      <div style="font-size:16px;font-weight:500;color:#111;">Hoy, 1 de octubre de 2026 · 12:00 h (online)</div>
-      <div style="font-size:12px;color:#999;margin-top:3px;">Sesión online · Revisión de adherencia y sensaciones · Ajuste de plan si procede</div>
+      <div style="font-size:16px;font-weight:500;color:#111;">Miércoles 14 de octubre de 2026 · 13:00 h</div>
+      <div style="font-size:12px;color:#999;margin-top:3px;">Revisión de adherencia y sensaciones · Ajuste de plan si procede</div>
     </div>
-    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Revisi%C3%B3n+nutricional+%E2%80%94+Javier+Calduch&dates=20261001T100000Z%2F20261001T110000Z&details=Sesi%C3%B3n+online.+Revisi%C3%B3n+de+adherencia+y+sensaciones.+Ajuste+de+plan+si+procede.&location=NutriLogos" target="_blank" style="display:inline-flex;align-items:center;gap:7px;background:#0d3d4f;color:#fff;text-decoration:none;border-radius:10px;padding:9px 18px;font-size:13px;font-weight:500;letter-spacing:0.02em;white-space:nowrap;">
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Revisi%C3%B3n+nutricional+%E2%80%94+Javier+Calduch&dates=20261014T110000Z%2F20261014T120000Z&details=Revisi%C3%B3n+de+adherencia+y+sensaciones.+Ajuste+de+plan+si+procede.&location=NutriLogos" target="_blank" style="display:inline-flex;align-items:center;gap:7px;background:#0d3d4f;color:#fff;text-decoration:none;border-radius:10px;padding:9px 18px;font-size:13px;font-weight:500;letter-spacing:0.02em;white-space:nowrap;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       Añadir al calendario
     </a>
