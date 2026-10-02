@@ -6,7 +6,7 @@ Las instrucciones de estructura y estética **no son de este repo**: son general
 
 ## Fuente de verdad
 
-1. **Plantilla v5.0** (`docs/INSTRUCCIONES_PLANTILLA_NUTRILOGOS_v5.0.txt` si está copiada en el repo; si no, pídele el archivo a Guille). Antes de cualquier cambio estructural, de CSS, de JS o de bloques nuevos, léela. Si el repo y la plantilla discrepan, manda la plantilla, salvo las excepciones de Javier listadas más abajo.
+1. **Plantilla v5.0** (copiada en la raíz del repo como `INSTRUCCIONES_PLANTILLA_NUTRILOGOS_v5.0.txt`; si falta, pídele el archivo a Guille). Antes de cualquier cambio estructural, de CSS, de JS o de bloques nuevos, léela. Si el repo y la plantilla discrepan, manda la plantilla, salvo las excepciones de Javier listadas más abajo.
 2. **Metodología NutriLogos** (100% plant-based, flexible según individualización). Las decisiones nutricionales se apoyan en ella; no se improvisan criterios clínicos.
 3. **Este archivo** para el contexto y las particularidades de Javier.
 
@@ -50,7 +50,7 @@ Si algo debería cambiar en el estándar general (no solo para Javier), no se co
 - Cada dato nuevo muestra la **comparativa con la medición anterior** con color verde (mejora) o rojo (empeora). Guille indica qué énfasis dar en las impresiones (p. ej. valor Z muscular, LDL); respétalo.
 - Impresiones: concisas, sin sobreexplicar por qué se consiguieron los resultados. Colores semánticos de puntos: verde logro, azul cambio de objetivo, ámbar vigilar, coral alerta.
 - Suplementación: sin nombres de marca (p. ej. pastillas de sodio). Geles: ofrecer también la opción de 55–60 g de CHO. Para guayaba, usar solo la forma sólida.
-- Mediciones registradas hasta ahora: 06/05, 15/06 y 25/08/2026. Próxima medición directa: la semana siguiente a la sesión online del 1/10/2026. **Próxima revisión: miércoles 14/10/2026 a las 13:00 h** (ya reflejada en el HTML; si cambia la fecha o hay una nueva, actualizar texto y botón de calendario, y sin fecha exacta dejar el botón atenuado).
+- Mediciones registradas hasta ahora: 06/05, 15/06 y 25/08/2026. Próxima medición directa: la semana siguiente a la sesión online del 1/10/2026. **Próxima revisión: miércoles 14/10/2026 a las 13:00 h, para recoger mediciones y ajustar la planificación si procede** (ya reflejada en el HTML; si cambia la fecha o hay una nueva, actualizar texto y botón de calendario, y sin fecha exacta dejar el botón atenuado).
 
 ## Contexto de Javier
 
@@ -78,8 +78,8 @@ Son decisiones conscientes de Guille; no las "corrijas" sin preguntar:
 
 - **"Próximos eventos"** va justo después del bloque Objetivo (la plantilla coloca las secciones personalizadas antes de "Próxima revisión"). Tras el simulacro se retiró y **ahora contiene el 21K de Valencia (domingo 25/10/2026)**, **sin documento incrustado ni botón a PDF** (hecho el 2/10/2026): Guille preparará la estrategia de competición de otra forma, y la tarjeta del evento debe dejar claro que ese contenido llegará de forma parecida a como se hizo con el simulacro. Si en el futuro se enlaza un archivo, comprueba su carpeta real antes de tocar cualquier `href` y mantén la ruta que funcione en GitHub Pages (el repo usa `documentos/`; la plantilla propone `./assets/`).
 - **Lista de compra:** el estado tachado se conserva **dentro de la sesión** al cambiar de pestaña (objeto JS `shopState`), pero no entre sesiones, para evitar desincronizaciones cuando el HTML se actualiza en GitHub. Verifica en el archivo cómo está implementado antes de modificarlo; la v5.0 de referencia solo usa `classList.toggle('done')` sin memoria al cambiar de pestaña.
-- El HTML nació sobre v4.x y puede conservar restos (bloque "Control de peso", `<hr>`, espaciados antiguos). Alinearlo con v5.0 solo cuando Guille lo pida; no lo hagas de oficio dentro de otra tarea.
-- Incluye recetas propias en el acordeón (ensalada de cuscús con gazpacho, gazpacho de remolacha, entre otras) y una sección de hidratación/intraentreno.
+- **Estilo alineado con v5.0 el 2/10/2026** (CSS estándar verbatim, sin `<hr>` ni `border-top`/`padding-top` en wrappers, espaciados del perfil, un único `<script>` al final, bloque "Control de peso" eliminado, leyenda en la tabla semanal). El contenido no se toca al alinear estilo: cada planificación es distinta. Ante nuevas versiones de la plantilla, alinear solo cuando Guille lo pida.
+- Incluye recetas propias en el acordeón (ensalada de cuscús con gazpacho, gazpacho de remolacha, entre otras) y una sección de hidratación/intraentreno (bici larga >2h) cuyos modelos A/B/C son **desplegables**, reutilizando las clases del acordeón de recetas (`pn-receta`, sin CSS nuevo).
 
 ## PDFs de marca (simulacros, estrategias, recetas)
 

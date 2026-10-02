@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Planificación Nutricional - Javier Calduch</title>
+<title>Planificación Nutricional — Javier Calduch</title>
 <link rel="apple-touch-icon" href="Logo.png">
 <meta name="apple-mobile-web-app-title" content="NutriLogos">
 <meta name="application-name" content="NutriLogos">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: system-ui, sans-serif; background: #fff; color: #1a1a1a; padding: 1.5rem; max-width: 860px; margin: 0 auto; }
+ 
+  /* ── PLAN SEMANAL ── */
   .pn-days { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.25rem; }
   .pn-day-btn { padding: 6px 14px; font-size: 13px; border: 1px solid #ccc; border-radius: 8px; background: transparent; color: #555; cursor: pointer; transition: background 0.15s; }
   .pn-day-btn:hover { background: #f4f4f4; }
@@ -26,7 +28,6 @@
   .badge-libre { background: #FBEAF0; color: #993556; }
   .pn-time { font-size: 12px; color: #aaa; }
   .pn-name { font-size: 15px; font-weight: 500; color: #111; margin-bottom: 4px; }
-  .pn-desc { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 8px; }
   .pn-note { font-size: 12px; color: #888; border-left: 2px solid #ddd; padding-left: 8px; line-height: 1.5; }
   .pn-extra-tag { display: inline-block; font-size: 11px; font-weight: 500; background: #E8F5E9; color: #2E7D32; border: 1px solid #A5D6A7; border-radius: 6px; padding: 2px 8px; margin-bottom: 6px; }
   .pn-batch-tag  { display: inline-block; font-size: 11px; font-weight: 500; background: #FFF8E1; color: #795700; border: 1px solid #F0D060; border-radius: 6px; padding: 2px 8px; margin-bottom: 6px; }
@@ -45,9 +46,9 @@
   .pn-legend-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #777; }
   h1 { font-size: 20px; font-weight: 500; margin-bottom: 0.25rem; }
   .subtitle { font-size: 13px; color: #777; margin-bottom: 1.5rem; }
-
-  /* ── PERFIL ── */
-  .pn-perfil { margin-bottom: 2.5rem; }
+ 
+  /* ── PERFIL DE LA PERSONA ── */
+  .pn-perfil { margin-bottom: 2rem; }
   .pn-perfil-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 0.25rem; }
   .pn-perfil-score { font-size: 12px; font-weight: 500; background: #EAF3DE; color: #3B6D11; border: 1px solid #C0DD97; border-radius: 8px; padding: 2px 10px; }
   .pn-perfil-sub { font-size: 13px; color: #777; margin-bottom: 1rem; }
@@ -67,10 +68,10 @@
   .pn-imp-item:last-child { border-bottom: none; padding-bottom: 0; }
   .pn-imp-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
   .pn-imp-dot-green { background: #1D9E75; }
-  .pn-imp-dot-blue { background: #185FA5; }
+  .pn-imp-dot-blue  { background: #185FA5; }
   .pn-imp-dot-amber { background: #BA7517; }
   .pn-imp-dot-coral { background: #993C1D; }
-  .pn-perfil-divider { border: none; border-top: 1px solid #e5e5e5; margin: 1.5rem 0; }
+  .pn-perfil-divider { border: none; border-top: 1px solid #e5e5e5; margin: 2.5rem 0; }
   .pn-perfil-section-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
   @media (max-width: 600px) { .pn-perfil-section-row { grid-template-columns: 1fr; } }
   .pn-antro-card { background: #f7f7f7; border-radius: 10px; padding: 0.75rem 1rem; }
@@ -84,15 +85,15 @@
   .pn-bio-val { font-weight: 500; color: #111; }
   .pn-bio-badge { font-size: 10px; padding: 1px 7px; border-radius: 6px; font-weight: 500; }
   .bio-normal { background: #EAF3DE; color: #3B6D11; }
-  .bio-alto { background: #E6F1FB; color: #185FA5; }
-  .bio-bajo { background: #FBEAF0; color: #993556; }
+  .bio-alto   { background: #E6F1FB; color: #185FA5; }
+  .bio-bajo   { background: #FBEAF0; color: #993556; }
   .pn-soma-card { border: 1px solid #e5e5e5; border-radius: 10px; padding: 0.75rem 1rem; display: flex; align-items: center; }
   .pn-soma-num { text-align: center; }
   .pn-soma-num-val { font-size: 22px; font-weight: 500; color: #111; }
   .pn-soma-num-lbl { font-size: 10px; color: #aaa; margin-top: 2px; }
   .pn-soma-separator { color: #ddd; font-size: 20px; }
-  .section-label { font-size: 12px; font-weight: 500; color: #666; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.85rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e8e8e8; }
-
+  .section-label { font-size: 12px; font-weight: 500; color: #666; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #ebebeb; }
+ 
   /* ── LISTA DE COMPRA ── */
   .pn-shop-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
   .pn-shop-btn { padding: 6px 14px; font-size: 13px; border: 1px solid #ccc; border-radius: 8px; background: transparent; color: #555; cursor: pointer; transition: background 0.15s; }
@@ -113,18 +114,17 @@
   .pn-shop-item.done .pn-shop-item-name { text-decoration: line-through; color: #aaa; }
   .pn-shop-item-name { font-size: 13px; font-weight: 500; color: #111; }
   .pn-shop-item-qty { font-size: 12px; font-weight: 500; color: #555; white-space: nowrap; text-align: right; }
-
+ 
   /* ── INGREDIENTES ENCAPSULADOS EN COMIDAS ── */
   .pn-ing-list { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
   .pn-ing { display: inline-block; font-size: 12px; background: #f4f4f4; border: 1px solid #e8e8e8; border-radius: 6px; padding: 3px 9px; color: #444; line-height: 1.4; }
-
+ 
   /* ── SUPLEMENTACIÓN ── */
-  .pn-supl-block { background: #F3F0FB; border: 1px solid #C9BFEF; border-radius: 12px; padding: 1rem 1.25rem; margin-top: 1.5rem; }
-  .pn-supl-title { font-size: 11px; font-weight: 600; color: #3C2E7A; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  .pn-supl-block { background: #F3F0FB; border: 1px solid #C9BFEF; border-radius: 12px; padding: 1rem 1.25rem; }
   .pn-supl-item { display: flex; gap: 10px; align-items: flex-start; padding: 0.5rem 0; border-bottom: 1px solid #DDD8F5; font-size: 13px; color: #333; line-height: 1.5; }
   .pn-supl-item:last-child { border-bottom: none; padding-bottom: 0; }
   .pn-supl-dot { width: 6px; height: 6px; border-radius: 50%; background: #7C5CBF; flex-shrink: 0; margin-top: 6px; }
-
+ 
   /* ── RECETAS ── */
   .pn-receta { border: 1px solid #e5e5e5; border-radius: 12px; overflow: hidden; margin-bottom: 8px; }
   .pn-receta-header { display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.25rem; cursor: pointer; background: #fafafa; transition: background 0.15s; user-select: none; }
@@ -143,64 +143,29 @@
   .pn-receta-step { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #444; line-height: 1.55; }
   .pn-receta-step-num { min-width: 22px; height: 22px; border-radius: 50%; background: #f0f0f0; border: 1px solid #e0e0e0; font-size: 11px; font-weight: 600; color: #666; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
   .pn-receta-tip { font-size: 12px; color: #888; border-left: 2px solid #ddd; padding-left: 8px; margin-top: 0.75rem; line-height: 1.5; }
-
+ 
   /* ── BOTÓN IMPRIMIR ── */
   .pn-print-btn { display: inline-flex; align-items: center; gap: 7px; background: #0d3d4f; color: #fff; border: none; border-radius: 10px; padding: 10px 20px; font-size: 13px; font-weight: 500; cursor: pointer; letter-spacing: 0.02em; }
   .pn-print-btn:hover { background: #0f4d63; }
-
+ 
+  /* ── IMPRESIÓN ── */
   @media print {
     @page { size: A4 landscape; margin: 1cm 1.2cm; }
-
-    /* Ocultar todo excepto el área de impresión */
     html, body { height: 100%; margin: 0; padding: 0; }
     body > * { display: none !important; }
     #printArea { display: block !important; }
-
-    /* Centrado y tamaño de la tabla */
     #printArea {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      display: flex !important;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5cm;
-      box-sizing: border-box;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      display: flex !important; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 0.5cm; box-sizing: border-box;
     }
-
-    /* Título */
-    #printArea .section-label {
-      font-size: 14px !important;
-      margin-bottom: 0.5rem !important;
-      color: #333 !important;
-    }
-
-    /* La tabla ocupa el ancho completo */
-    #printArea table {
-      width: 100% !important;
-      min-width: unset !important;
-      font-size: 11px !important;
-      border-collapse: collapse !important;
-    }
-
-    #printArea th {
-      padding: 8px 6px !important;
-      font-size: 10px !important;
-    }
-
-    #printArea td {
-      padding: 10px 8px !important;
-      font-size: 11px !important;
-      line-height: 1.4 !important;
-    }
-
-    /* Preservar colores de fondo en impresión */
+    #printArea .section-label { font-size: 14px !important; margin-bottom: 0.5rem !important; color: #333 !important; }
+    #printArea table { width: 100% !important; min-width: unset !important; font-size: 11px !important; border-collapse: collapse !important; }
+    #printArea th { padding: 8px 6px !important; font-size: 10px !important; }
+    #printArea td { padding: 10px 8px !important; font-size: 11px !important; line-height: 1.4 !important; }
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-
-    /* Ocultar botón imprimir */
     .pn-print-btn { display: none !important; }
-
-    /* No partir en páginas */
     #printArea { page-break-inside: avoid; }
     table { page-break-inside: avoid; }
   }
@@ -208,11 +173,11 @@
 </head>
 <body>
 
-<h1>Planificación Nutricional - Javier Calduch</h1>
+<h1>Planificación Nutricional — Javier Calduch</h1>
 <p class="subtitle">Base vegetal 90% · 4 comidas diarias (3 los domingos) · normocalórico + superávit ligero · objetivo: mantener recomposición + 21K Valencia oct. 2026 (disfrutar y mejorar marca)</p>
 
 <!-- BLOQUE DESCRIPCIÓN CLIENTE -->
-<div style="border:1px solid #e5e5e5;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem;background:#fafafa;">
+<div style="border:1px solid #e5e5e5;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;background:#fafafa;">
   <div style="font-size:11px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem;">Descripción del cliente</div>
   <div style="display:flex;flex-wrap:wrap;gap:8px;">
     <div style="background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:6px 12px;font-size:12px;color:#333;">
@@ -247,7 +212,7 @@
 <!-- ═══════════════════════════════════════════════
      PRÓXIMOS EVENTOS
 ════════════════════════════════════════════════ -->
-<div style="margin-bottom:2rem;">
+<div style="margin-top:2.5rem;margin-bottom:1.5rem;">
   <div class="section-label">Próximos eventos</div>
   <div style="border:1px solid #e5e5e5;border-radius:12px;padding:1rem 1.25rem;background:#fafafa;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
     <div style="font-size:26px;">🏃‍♂️</div>
@@ -293,7 +258,7 @@
       <div class="pn-metric-sub">29,92 kg · Z Phantom +0,90</div>
     </div>
   </div>
-  <div class="pn-perfil-grid" style="margin-bottom:10px">
+  <div class="pn-perfil-grid-2" style="margin-bottom:1.75rem">
     <div class="pn-metric">
       <div class="pn-metric-lbl">LBM (masa libre de grasa)</div>
       <div class="pn-metric-val">55,5 kg <span style="font-size:11px;color:#BA7517;font-weight:500;">(prev 55,8)</span></div>
@@ -317,7 +282,7 @@
   </div>
 
   <!-- Somatotipo -->
-  <div style="margin-bottom:10px">
+  <div style="margin-top:2rem;margin-bottom:1.75rem">
     <div class="section-label">Somatotipo (Carter-Heath)</div>
     <div style="display:flex;gap:10px;align-items:stretch;flex-wrap:wrap">
       <div style="flex:1;min-width:200px;border:1px solid #e5e5e5;border-radius:10px;padding:0.75rem 1rem;display:flex;flex-direction:column;gap:10px;overflow:hidden;">
@@ -356,7 +321,7 @@
   </div>
 
   <!-- Datos antropométricos y bioimpedancia en columnas -->
-  <div class="pn-perfil-section-row">
+  <div class="pn-perfil-section-row" style="margin-top:1.75rem">
     <div>
       <div class="section-label">Datos antropométricos clave</div>
       <div class="pn-antro-card">
@@ -372,7 +337,7 @@
         <div class="pn-antro-row" style="margin-top:4px;padding-top:6px;border-top:1px solid #ddd"><span style="font-weight:500">Σ6 pliegues</span><span class="pn-antro-val" style="color:#185FA5">50,00 mm <span style="font-size:10px;color:#1D9E75;">(prev 54,00)</span></span></div>
         <div class="pn-antro-row"><span style="font-weight:500">Σ8 pliegues</span><span class="pn-antro-val">59,00 mm <span style="font-size:10px;color:#1D9E75;">(prev 62,50)</span></span></div>
       </div>
-      <div class="pn-antro-card" style="margin-top:10px">
+      <div class="pn-antro-card" style="margin-top:0.85rem">
         <div class="pn-antro-card-title">Perímetros</div>
         <div class="pn-antro-row"><span>Cintura</span><span class="pn-antro-val">76,90 cm <span style="font-size:10px;color:#1D9E75;">(78,50)</span></span></div>
         <div class="pn-antro-row"><span>Cadera</span><span class="pn-antro-val">87,00 cm <span style="font-size:10px;color:#888;">(84,70)</span></span></div>
@@ -393,7 +358,7 @@
         <div class="pn-bio-row"><span class="pn-bio-label">Músculo esquelético</span><div style="display:flex;gap:6px;align-items:center"><span class="pn-bio-val">35,9 kg <span style="font-size:10px;color:#993C1D;">(36,1)</span></span><span class="pn-bio-badge bio-alto">Alto</span></div></div>
         <div class="pn-bio-row"><span class="pn-bio-label">Grasa visceral</span><div style="display:flex;gap:6px;align-items:center"><span class="pn-bio-val">Nivel 3 <span style="font-size:10px;color:#1D9E75;">(4)</span></span><span class="pn-bio-badge bio-normal">Normal</span></div></div>
       </div>
-      <div class="pn-antro-card" style="margin-top:10px">
+      <div class="pn-antro-card" style="margin-top:0.85rem">
         <div class="pn-antro-card-title">Fuerza y equilibrio muscular</div>
         <div class="pn-bio-row"><span class="pn-bio-label">Fuerza superior</span><div style="display:flex;gap:6px;align-items:center"><span class="pn-bio-badge bio-normal">Normal</span></div></div>
         <div class="pn-bio-row"><span class="pn-bio-label">Fuerza inferior</span><div style="display:flex;gap:6px;align-items:center"><span class="pn-bio-badge bio-normal">Normal</span></div></div>
@@ -401,17 +366,11 @@
         <div class="pn-bio-row"><span class="pn-bio-label">Equilibrio inferior</span><div style="display:flex;gap:6px;align-items:center"><span class="pn-bio-badge bio-bajo">Lev. desequilibrado</span></div></div>
         <div class="pn-bio-row"><span class="pn-bio-label">IMC</span><div style="display:flex;gap:6px;align-items:center"><span class="pn-bio-val">20,7</span><span class="pn-bio-badge bio-normal">Normal</span></div></div>
       </div>
-      <div class="pn-antro-card" style="margin-top:10px">
-        <div class="pn-antro-card-title">Control de peso (objetivo)</div>
-        <div class="pn-bio-row"><span class="pn-bio-label">Peso deseado</span><span class="pn-bio-val">65,28 kg</span></div>
-        <div class="pn-bio-row"><span class="pn-bio-label">Control de grasa</span><span class="pn-bio-val">+2,58 kg</span></div>
-        <div class="pn-bio-row"><span class="pn-bio-label">Control muscular</span><span class="pn-bio-val">+0 kg</span></div>
-      </div>
     </div>
   </div>
 
   <!-- Impresiones clínicas -->
-  <div style="margin-top:10px">
+  <div style="margin-top:1.75rem">
     <div class="section-label">Impresiones del profesional</div>
     <div class="pn-impresiones">
       <div class="pn-imp-item">
@@ -439,14 +398,12 @@
 
 </div>
 
-<hr class="pn-perfil-divider">
-
 <!-- ══════════════════════════════════════════════════════════════════════════ -->
 <!--  MENÚ SEMANAL — TABLA RESUMEN                                            -->
 <!-- ══════════════════════════════════════════════════════════════════════════ -->
-<div id="printArea" style="margin-bottom:1.5rem">
+<div style="margin-bottom:2rem" id="printArea">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.85rem;padding-bottom:0.4rem;border-bottom:1px solid #e8e8e8;">
-    <div class="section-label" style="margin:0;padding:0;border:none;">Menú semanal de un vistazo</div>
+    <div style="font-size:12px;font-weight:500;color:#666;text-transform:uppercase;letter-spacing:0.06em;">Menú semanal de un vistazo</div>
     <button class="pn-print-btn" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
   </div>
   <div style="overflow-x:auto;border-radius:12px;border:1px solid #e5e5e5;">
@@ -524,9 +481,18 @@
       </tbody>
     </table>
   </div>
+  <!-- Leyenda -->
+  <div class="pn-legend" style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid #e5e5e5;">
+    <span style="font-size:12px;color:#aaa;margin-right:4px;">Leyenda:</span>
+    <span class="pn-legend-item"><span class="pn-badge badge-d">D</span> Desayuno</span>
+    <span class="pn-legend-item"><span class="pn-badge badge-c">C</span> Comida</span>
+    <span class="pn-legend-item"><span class="pn-badge badge-me">Me</span> Merienda</span>
+    <span class="pn-legend-item"><span class="pn-badge badge-ce">Ce</span> Cena</span>
+    <span class="pn-legend-item"><span class="pn-badge badge-libre">Libre</span> Cena libre</span>
+  </div>
 </div>
 
-<div style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid #e5e5e5;">
+<div style="margin-top:2.5rem;">
   <div class="section-label">Menú desarrollado por días</div>
   <div class="pn-days" id="dayTabs"></div>
   <div id="dayView"></div>
@@ -536,6 +502,177 @@
     <span class="pn-legend-item"><span class="pn-badge badge-c">C</span> Comida</span>
     <span class="pn-legend-item"><span class="pn-badge badge-me">Me</span> Merienda</span>
     <span class="pn-legend-item"><span class="pn-badge badge-ce">Ce</span> Cena</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     LISTA DE COMPRA SEMANAL
+════════════════════════════════════════════════ -->
+<div style="margin-top:2.5rem;">
+  <div class="section-label">Lista de compra semanal</div>
+  <div class="pn-shop-tabs" id="shopTabs"></div>
+  <div id="shopView"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SUPLEMENTACIÓN
+════════════════════════════════════════════════ -->
+<div style="margin-top:2.5rem;">
+  <div class="section-label">Suplementación recomendada</div>
+  <div class="pn-supl-block">
+    <div class="pn-supl-item">
+    <div class="pn-supl-dot"></div>
+    <div><strong>Vitamina B12</strong> — 1 pastilla semanal (día fijo: viernes o domingo). Imprescindible en dieta plant-based consolidada. No negociable.</div>
+  </div>
+  <div class="pn-supl-item">
+    <div class="pn-supl-dot"></div>
+    <div><strong>Vitamina D</strong> — 2.000 UI/día en perla. Especialmente importante en meses de baja exposición solar (octubre–marzo). En verano con exposición diaria, valorar reducción con el nutricionista. Indicado por perfil óseo deficiente en bioimpedancia.</div>
+  </div>
+  <div class="pn-supl-item">
+    <div class="pn-supl-dot"></div>
+    <div><strong>Calcio dietético activo</strong> — No se recomienda suplemento de calcio aislado si la dieta está bien planificada. Asegurar presencia semanal de: bebida vegetal enriquecida (≥120 mg Ca/100 ml), tahini, almendras, brócoli y tofu. Si alguna semana falla la base, consultar en revisión.</div>
+  </div>
+  <div class="pn-supl-item">
+    <div class="pn-supl-dot"></div>
+    <div><strong>Proteína en polvo (opcional)</strong> — Solo en días donde el total proteico no alcance el objetivo (~100 g/día). Máximo 1 scoop/día, preferentemente en la merienda del jueves (día de fuerza). No es sustituto de la base alimentaria.</div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     RECETAS
+════════════════════════════════════════════════ -->
+<div style="margin-top:2.5rem;">
+  <div class="section-label">Recetas</div>
+  <div id="recetasList"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     NUTRICIÓN INTRAENTRENO — BICI >2H
+════════════════════════════════════════════════ -->
+<div style="margin-top:2.5rem;">
+  <div class="section-label">Nutrición intraentreno — bici larga (&gt;2h)</div>
+  <p style="font-size:13px;color:#666;margin-bottom:1rem;line-height:1.6;">A partir de 90 min a intensidad moderada-alta el glucógeno muscular empieza a comprometerse. Para mantener el rendimiento en el tramo final es imprescindible aporte externo de carbohidratos. Clave: a partir de 90 min usar siempre fuentes con <strong>múltiples transportadores intestinales</strong> (glucosa + fructosa), ya que cada uno satura de forma independiente — mezclarlos permite absorber hasta 90 g CHO/h sin acumulación intestinal. Aquí tienes 3 modelos con diferentes costes y practicidad.</p>
+
+  <!-- MODELO A -->
+  <div class="pn-receta">
+    <div class="pn-receta-header" style="background:#EAF3DE;" onclick="this.parentNode.classList.toggle('open')">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span style="font-size:16px;">🍌</span>
+        <div>
+        <div style="font-size:14px;font-weight:500;color:#3B6D11;">Modelo A — Fruta sólida + IsoDrink</div>
+        <div style="font-size:11px;color:#5A8A2A;margin-top:2px;">Opción más económica · sin procesados · fácil de preparar</div>
+        </div>
+      </div>
+      <span class="pn-receta-arrow">▸</span>
+    </div>
+    <div class="pn-receta-body">
+      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Pre-salida (2–3h antes)</div>
+      <p style="font-size:13px;color:#444;margin-bottom:1rem;line-height:1.6;">2–3 g/kg CHO → <strong>125–190 g CHO</strong>. Ej: plato de pasta o cuscús + fruta.</p>
+      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Intraentreno — por horas</div>
+      <div style="display:grid;gap:8px;margin-bottom:1rem;">
+        <div style="background:#f9fcf5;border:1px solid #C0DD97;border-radius:8px;padding:0.75rem 1rem;">
+          <div style="font-size:12px;font-weight:600;color:#3B6D11;margin-bottom:4px;">60–90 min · 30–45 g CHO/h</div>
+          <p style="font-size:13px;color:#444;line-height:1.5;">1 plátano mediano (25 g CHO) + 500 ml IsoDrink (≈20 g CHO). Tomar en 2–3 bocados/sorbos cada 20–30 min.</p>
+        </div>
+        <div style="background:#f9fcf5;border:1px solid #C0DD97;border-radius:8px;padding:0.75rem 1rem;">
+          <div style="font-size:12px;font-weight:600;color:#3B6D11;margin-bottom:4px;">&gt;90 min · 60–90 g CHO/h</div>
+          <p style="font-size:13px;color:#444;line-height:1.5;">1 plátano (25 g CHO) + 1–2 piezas de guayaba sólida (15–20 g CHO) + 500 ml IsoDrink (20 g CHO). Tomar en fracciones cada 20 min. La mezcla de fructosa (guayaba) + glucosa (IsoDrink + plátano) activa múltiples transportadores y maximiza la absorción.</p>
+        </div>
+      </div>
+      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Post (primeros 30 min)</div>
+      <p style="font-size:13px;color:#444;line-height:1.6;">1–1,2 g/kg CHO alto IG → <strong>63–76 g CHO</strong>. Ej: vasito de cuscús o quinoa precocinado + plátano grande + yogur de soja.</p>
+      <p style="font-size:12px;color:#888;border-left:2px solid #C0DD97;padding-left:8px;margin-top:8px;line-height:1.5;">Opción isotónica casera: 500 ml agua + 30 g azúcar + 1 cda. miel + ½ cdita. sal. Aporta glucosa+fructosa y equivale en CHO a la comercial — válida si no tienes IsoDrink a mano.</p>
+    </div>
+  </div>
+
+  <!-- MODELO B -->
+  <div class="pn-receta">
+    <div class="pn-receta-header" style="background:#E6F1FB;" onclick="this.parentNode.classList.toggle('open')">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span style="font-size:16px;">🍈</span>
+        <div>
+        <div style="font-size:14px;font-weight:500;color:#0C447C;">Modelo B — Guayaba sólida + dátil + IsoDrink + sodio</div>
+        <div style="font-size:11px;color:#2A6A9E;margin-top:2px;">Equilibrio economía / practicidad · ideal para sesiones largas con calor</div>
+        </div>
+      </div>
+      <span class="pn-receta-arrow">▸</span>
+    </div>
+    <div class="pn-receta-body">
+      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Pre-salida (2–3h antes)</div>
+      <p style="font-size:13px;color:#444;margin-bottom:1rem;line-height:1.6;">Igual que Modelo A: 125–190 g CHO.</p>
+      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Intraentreno — por horas</div>
+      <div style="display:grid;gap:8px;margin-bottom:1rem;">
+        <div style="background:#f5f9fe;border:1px solid #B5D4F4;border-radius:8px;padding:0.75rem 1rem;">
+          <div style="font-size:12px;font-weight:600;color:#0C447C;margin-bottom:4px;">60–90 min · 30–45 g CHO/h</div>
+          <p style="font-size:13px;color:#444;line-height:1.5;">1–2 piezas de guayaba sólida (≈25–30 g CHO) + 500 ml IsoDrink (≈20 g CHO). Comer en 2 tomas cada 30 min.</p>
+        </div>
+        <div style="background:#f5f9fe;border:1px solid #B5D4F4;border-radius:8px;padding:0.75rem 1rem;">
+          <div style="font-size:12px;font-weight:600;color:#0C447C;margin-bottom:4px;">&gt;90 min · 60–90 g CHO/h</div>
+          <p style="font-size:13px;color:#444;line-height:1.5;">Guayaba sólida (25–30 g CHO) + 1 dátil Medjool cada 30 min (18 g CHO c/u) + 500 ml IsoDrink (20 g CHO) + 1 pastilla de sodio/h. En calor o sudoración alta, subir a 1–2 pastillas/h.</p>
+        </div>
+      </div>
+      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Post (primeros 30 min)</div>
+      <p style="font-size:13px;color:#444;line-height:1.6;">Igual que Modelo A: 63–76 g CHO. Plátano + vasito de cuscús o quinoa precocinado + yogur de soja.</p>
+      <p style="font-size:12px;color:#888;border-left:2px solid #B5D4F4;padding-left:8px;margin-top:8px;line-height:1.5;">Opción isotónica casera: 500 ml agua + 30 g azúcar + 1 cda. miel + ½ cdita. sal.</p>
+    </div>
+  </div>
+
+  <!-- MODELO C -->
+  <div class="pn-receta">
+    <div class="pn-receta-header" style="background:#FAEEDA;" onclick="this.parentNode.classList.toggle('open')">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span style="font-size:16px;">⚡</span>
+        <div>
+        <div style="font-size:14px;font-weight:500;color:#633806;">Modelo C — Gel + IsoDrink + sodio</div>
+        <div style="font-size:11px;color:#854F0B;margin-top:2px;">Máxima practicidad · mínimo volumen · para tramos finales exigentes o competición</div>
+        </div>
+      </div>
+      <span class="pn-receta-arrow">▸</span>
+    </div>
+    <div class="pn-receta-body">
+      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Pre-salida (2–3h antes)</div>
+      <p style="font-size:13px;color:#444;margin-bottom:1rem;line-height:1.6;">Igual que los modelos anteriores. Los geles se reservan para el intraentreno.</p>
+      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Intraentreno — por horas</div>
+      <div style="display:grid;gap:8px;margin-bottom:1rem;">
+        <div style="background:#fefaf5;border:1px solid #FAC775;border-radius:8px;padding:0.75rem 1rem;">
+          <div style="font-size:12px;font-weight:600;color:#633806;margin-bottom:4px;">Primera hora · base fruta + isotónica</div>
+          <p style="font-size:13px;color:#444;line-height:1.5;">1 plátano (25 g CHO) + 1 pieza de guayaba sólida (15 g CHO) + 500 ml IsoDrink (20 g CHO). Total ~60 g CHO/h. Reservar los geles para cuando el ritmo suba.</p>
+        </div>
+        <div style="background:#fefaf5;border:1px solid #FAC775;border-radius:8px;padding:0.75rem 1rem;">
+          <div style="font-size:12px;font-weight:600;color:#633806;margin-bottom:4px;">&gt;90 min o tramo final exigente · incorporar gel</div>
+          <p style="font-size:13px;color:#444;line-height:1.5;"><strong>Gel estándar (22–30 g CHO):</strong> 1 gel cada 30–45 min + 200 ml agua por gel + IsoDrink entre tomas. No superar 2–3 geles por sesión.<br><strong>Gel alta concentración (55–60 g CHO):</strong> 1 gel cada 45–60 min + mínimo 400 ml agua por gel. Menos tomas, mayor aporte — usar si la tolerancia digestiva es buena y la hidratación está asegurada.<br>En ambos casos: 1 pastilla de sodio/h.</p>
+        </div>
+      </div>
+      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Post (primeros 30 min)</div>
+      <p style="font-size:13px;color:#444;line-height:1.6;">Igual que los modelos anteriores: 63–76 g CHO. Si la recuperación es &lt;24h: mantener 1,2 g/kg/h CHO durante las primeras 3–4h.</p>
+      <p style="font-size:12px;color:#888;border-left:2px solid #FAC775;padding-left:8px;margin-top:8px;line-height:1.5;">Opción isotónica casera: 500 ml agua + 30 g azúcar + 1 cda. miel + ½ cdita. sal.</p>
+    </div>
+  </div>
+
+  <!-- Nota sodio -->
+  <div style="background:#F3F0FB;border:1px solid #C9BFEF;border-radius:10px;padding:0.85rem 1.1rem;margin-top:4px;">
+    <div style="font-size:12px;font-weight:600;color:#3C2E7A;margin-bottom:6px;">💊 Pastillas de sodio</div>
+    <p style="font-size:13px;color:#444;line-height:1.6;">En esfuerzos &gt;90 min con calor o sudoración alta. Objetivo: <strong>300–700 mg Na/h</strong> según nivel de sudoración. Una pastilla estándar aporta 200–300 mg Na — tomar 1–2/h. Alternativa: ½ cdita. de sal en el bidón (≈1.000 mg Na/L).</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PRÓXIMA REVISIÓN
+════════════════════════════════════════════════ -->
+<div style="margin-top:2.5rem;">
+  <div class="section-label">Próxima revisión</div>
+  <div style="display:flex;align-items:center;gap:14px;background:#fafafa;border:1px solid #e5e5e5;border-radius:12px;padding:1rem 1.25rem;flex-wrap:wrap;">
+    <div style="font-size:28px;">📅</div>
+    <div style="flex:1;min-width:200px;">
+      <div style="font-size:16px;font-weight:500;color:#111;">Miércoles 14 de octubre de 2026 · 13:00 h</div>
+      <div style="font-size:12px;color:#999;margin-top:3px;">Recogida de mediciones · Ajuste de la planificación si procede</div>
+    </div>
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Revisi%C3%B3n+nutricional+%E2%80%94+Javier+Calduch&dates=20261014T110000Z%2F20261014T120000Z&details=Recogida+de+mediciones.+Ajuste+de+la+planificaci%C3%B3n+si+procede.&location=NutriLogos" target="_blank" style="display:inline-flex;align-items:center;gap:7px;background:#0d3d4f;color:#fff;text-decoration:none;border-radius:10px;padding:9px 18px;font-size:13px;font-weight:500;letter-spacing:0.02em;white-space:nowrap;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Añadir al calendario
+    </a>
   </div>
 </div>
 
@@ -765,12 +902,8 @@ function render() {
   const d = days[current];
   let html = `<div style="font-size:18px;font-weight:500;color:#111;margin-bottom:8px">${d.full}</div>`;
   html += `<div class="pn-sport-banner ${d.sportClass}">${d.sport} — ${d.sportBanner}</div>`;
-  if (d.libre) {
-    html += `<div class="pn-libre-banner">La cena de este día está reservada como comida libre (10%). El resto del día mantiene la base vegetal habitual.</div>`;
-  }
-  if (d.suppl) {
-    html += `<div class="pn-supp-banner">` + d.suppl.replace(/\n/g,"<br>") + `</div>`;
-  }
+  if (d.libre) html += `<div class="pn-libre-banner">La cena de este día está reservada como comida libre (10%). El resto del día mantiene la base vegetal habitual.</div>`;
+  if (d.suppl) html += `<div class="pn-supp-banner">` + d.suppl.replace(/\n/g,"<br>") + `</div>`;
   if (d.batchCooking) {
     const bc = d.batchCooking;
     const items = bc.items.map(i => `<li>${i}</li>`).join("");
@@ -823,8 +956,6 @@ function buildTabs() {
   });
 }
 
-buildTabs();
-render();
 
 /* ═══════════════════════════════
    LISTA DE COMPRA INTERACTIVA
@@ -956,173 +1087,6 @@ function buildShopTabs() {
     container.appendChild(btn);
   });
 }
-
-</script>
-
-<!-- ═══════════════════════════════════════════════
-     LISTA DE COMPRA SEMANAL
-════════════════════════════════════════════════ -->
-<div style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid #e5e5e5;">
-  <div class="section-label">Lista de compra semanal</div>
-  <div class="pn-shop-tabs" id="shopTabs"></div>
-  <div id="shopView"></div>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     SUPLEMENTACIÓN
-════════════════════════════════════════════════ -->
-<div style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid #e5e5e5;">
-  <div class="section-label">Suplementación recomendada</div>
-  <div class="pn-supl-block">
-    <div class="pn-supl-item">
-    <div class="pn-supl-dot"></div>
-    <div><strong>Vitamina B12</strong> — 1 pastilla semanal (día fijo: viernes o domingo). Imprescindible en dieta plant-based consolidada. No negociable.</div>
-  </div>
-  <div class="pn-supl-item">
-    <div class="pn-supl-dot"></div>
-    <div><strong>Vitamina D</strong> — 2.000 UI/día en perla. Especialmente importante en meses de baja exposición solar (octubre–marzo). En verano con exposición diaria, valorar reducción con el nutricionista. Indicado por perfil óseo deficiente en bioimpedancia.</div>
-  </div>
-  <div class="pn-supl-item">
-    <div class="pn-supl-dot"></div>
-    <div><strong>Calcio dietético activo</strong> — No se recomienda suplemento de calcio aislado si la dieta está bien planificada. Asegurar presencia semanal de: bebida vegetal enriquecida (≥120 mg Ca/100 ml), tahini, almendras, brócoli y tofu. Si alguna semana falla la base, consultar en revisión.</div>
-  </div>
-  <div class="pn-supl-item">
-    <div class="pn-supl-dot"></div>
-    <div><strong>Proteína en polvo (opcional)</strong> — Solo en días donde el total proteico no alcance el objetivo (~100 g/día). Máximo 1 scoop/día, preferentemente en la merienda del jueves (día de fuerza). No es sustituto de la base alimentaria.</div>
-  </div>
-</div>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     RECETAS
-════════════════════════════════════════════════ -->
-<div style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid #e5e5e5;">
-  <div class="section-label">Recetas</div>
-  <div id="recetasList"></div>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     NUTRICIÓN INTRAENTRENO — BICI >2H
-════════════════════════════════════════════════ -->
-<div style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid #e5e5e5;">
-  <div class="section-label">Nutrición intraentreno — bici larga (&gt;2h)</div>
-  <p style="font-size:13px;color:#666;margin-bottom:1rem;line-height:1.6;">A partir de 90 min a intensidad moderada-alta el glucógeno muscular empieza a comprometerse. Para mantener el rendimiento en el tramo final es imprescindible aporte externo de carbohidratos. Clave: a partir de 90 min usar siempre fuentes con <strong>múltiples transportadores intestinales</strong> (glucosa + fructosa), ya que cada uno satura de forma independiente — mezclarlos permite absorber hasta 90 g CHO/h sin acumulación intestinal. Aquí tienes 3 modelos con diferentes costes y practicidad.</p>
-
-  <!-- MODELO A -->
-  <div style="border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;margin-bottom:10px;">
-    <div style="background:#EAF3DE;padding:0.75rem 1.25rem;display:flex;align-items:center;gap:10px;">
-      <span style="font-size:16px;">🍌</span>
-      <div>
-        <div style="font-size:14px;font-weight:500;color:#3B6D11;">Modelo A — Fruta sólida + IsoDrink</div>
-        <div style="font-size:11px;color:#5A8A2A;margin-top:2px;">Opción más económica · sin procesados · fácil de preparar</div>
-      </div>
-    </div>
-    <div style="padding:1rem 1.25rem;background:#fff;">
-      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Pre-salida (2–3h antes)</div>
-      <p style="font-size:13px;color:#444;margin-bottom:1rem;line-height:1.6;">2–3 g/kg CHO → <strong>125–190 g CHO</strong>. Ej: plato de pasta o cuscús + fruta.</p>
-      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Intraentreno — por horas</div>
-      <div style="display:grid;gap:8px;margin-bottom:1rem;">
-        <div style="background:#f9fcf5;border:1px solid #C0DD97;border-radius:8px;padding:0.75rem 1rem;">
-          <div style="font-size:12px;font-weight:600;color:#3B6D11;margin-bottom:4px;">60–90 min · 30–45 g CHO/h</div>
-          <p style="font-size:13px;color:#444;line-height:1.5;">1 plátano mediano (25 g CHO) + 500 ml IsoDrink (≈20 g CHO). Tomar en 2–3 bocados/sorbos cada 20–30 min.</p>
-        </div>
-        <div style="background:#f9fcf5;border:1px solid #C0DD97;border-radius:8px;padding:0.75rem 1rem;">
-          <div style="font-size:12px;font-weight:600;color:#3B6D11;margin-bottom:4px;">&gt;90 min · 60–90 g CHO/h</div>
-          <p style="font-size:13px;color:#444;line-height:1.5;">1 plátano (25 g CHO) + 1–2 piezas de guayaba sólida (15–20 g CHO) + 500 ml IsoDrink (20 g CHO). Tomar en fracciones cada 20 min. La mezcla de fructosa (guayaba) + glucosa (IsoDrink + plátano) activa múltiples transportadores y maximiza la absorción.</p>
-        </div>
-      </div>
-      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Post (primeros 30 min)</div>
-      <p style="font-size:13px;color:#444;line-height:1.6;">1–1,2 g/kg CHO alto IG → <strong>63–76 g CHO</strong>. Ej: vasito de cuscús o quinoa precocinado + plátano grande + yogur de soja.</p>
-      <p style="font-size:12px;color:#888;border-left:2px solid #C0DD97;padding-left:8px;margin-top:8px;line-height:1.5;">Opción isotónica casera: 500 ml agua + 30 g azúcar + 1 cda. miel + ½ cdita. sal. Aporta glucosa+fructosa y equivale en CHO a la comercial — válida si no tienes IsoDrink a mano.</p>
-    </div>
-  </div>
-
-  <!-- MODELO B -->
-  <div style="border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;margin-bottom:10px;">
-    <div style="background:#E6F1FB;padding:0.75rem 1.25rem;display:flex;align-items:center;gap:10px;">
-      <span style="font-size:16px;">🍈</span>
-      <div>
-        <div style="font-size:14px;font-weight:500;color:#0C447C;">Modelo B — Guayaba sólida + dátil + IsoDrink + sodio</div>
-        <div style="font-size:11px;color:#2A6A9E;margin-top:2px;">Equilibrio economía / practicidad · ideal para sesiones largas con calor</div>
-      </div>
-    </div>
-    <div style="padding:1rem 1.25rem;background:#fff;">
-      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Pre-salida (2–3h antes)</div>
-      <p style="font-size:13px;color:#444;margin-bottom:1rem;line-height:1.6;">Igual que Modelo A: 125–190 g CHO.</p>
-      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Intraentreno — por horas</div>
-      <div style="display:grid;gap:8px;margin-bottom:1rem;">
-        <div style="background:#f5f9fe;border:1px solid #B5D4F4;border-radius:8px;padding:0.75rem 1rem;">
-          <div style="font-size:12px;font-weight:600;color:#0C447C;margin-bottom:4px;">60–90 min · 30–45 g CHO/h</div>
-          <p style="font-size:13px;color:#444;line-height:1.5;">1–2 piezas de guayaba sólida (≈25–30 g CHO) + 500 ml IsoDrink (≈20 g CHO). Comer en 2 tomas cada 30 min.</p>
-        </div>
-        <div style="background:#f5f9fe;border:1px solid #B5D4F4;border-radius:8px;padding:0.75rem 1rem;">
-          <div style="font-size:12px;font-weight:600;color:#0C447C;margin-bottom:4px;">&gt;90 min · 60–90 g CHO/h</div>
-          <p style="font-size:13px;color:#444;line-height:1.5;">Guayaba sólida (25–30 g CHO) + 1 dátil Medjool cada 30 min (18 g CHO c/u) + 500 ml IsoDrink (20 g CHO) + 1 pastilla de sodio/h. En calor o sudoración alta, subir a 1–2 pastillas/h.</p>
-        </div>
-      </div>
-      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Post (primeros 30 min)</div>
-      <p style="font-size:13px;color:#444;line-height:1.6;">Igual que Modelo A: 63–76 g CHO. Plátano + vasito de cuscús o quinoa precocinado + yogur de soja.</p>
-      <p style="font-size:12px;color:#888;border-left:2px solid #B5D4F4;padding-left:8px;margin-top:8px;line-height:1.5;">Opción isotónica casera: 500 ml agua + 30 g azúcar + 1 cda. miel + ½ cdita. sal.</p>
-    </div>
-  </div>
-
-  <!-- MODELO C -->
-  <div style="border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;margin-bottom:10px;">
-    <div style="background:#FAEEDA;padding:0.75rem 1.25rem;display:flex;align-items:center;gap:10px;">
-      <span style="font-size:16px;">⚡</span>
-      <div>
-        <div style="font-size:14px;font-weight:500;color:#633806;">Modelo C — Gel + IsoDrink + sodio</div>
-        <div style="font-size:11px;color:#854F0B;margin-top:2px;">Máxima practicidad · mínimo volumen · para tramos finales exigentes o competición</div>
-      </div>
-    </div>
-    <div style="padding:1rem 1.25rem;background:#fff;">
-      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Pre-salida (2–3h antes)</div>
-      <p style="font-size:13px;color:#444;margin-bottom:1rem;line-height:1.6;">Igual que los modelos anteriores. Los geles se reservan para el intraentreno.</p>
-      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Intraentreno — por horas</div>
-      <div style="display:grid;gap:8px;margin-bottom:1rem;">
-        <div style="background:#fefaf5;border:1px solid #FAC775;border-radius:8px;padding:0.75rem 1rem;">
-          <div style="font-size:12px;font-weight:600;color:#633806;margin-bottom:4px;">Primera hora · base fruta + isotónica</div>
-          <p style="font-size:13px;color:#444;line-height:1.5;">1 plátano (25 g CHO) + 1 pieza de guayaba sólida (15 g CHO) + 500 ml IsoDrink (20 g CHO). Total ~60 g CHO/h. Reservar los geles para cuando el ritmo suba.</p>
-        </div>
-        <div style="background:#fefaf5;border:1px solid #FAC775;border-radius:8px;padding:0.75rem 1rem;">
-          <div style="font-size:12px;font-weight:600;color:#633806;margin-bottom:4px;">&gt;90 min o tramo final exigente · incorporar gel</div>
-          <p style="font-size:13px;color:#444;line-height:1.5;"><strong>Gel estándar (22–30 g CHO):</strong> 1 gel cada 30–45 min + 200 ml agua por gel + IsoDrink entre tomas. No superar 2–3 geles por sesión.<br><strong>Gel alta concentración (55–60 g CHO):</strong> 1 gel cada 45–60 min + mínimo 400 ml agua por gel. Menos tomas, mayor aporte — usar si la tolerancia digestiva es buena y la hidratación está asegurada.<br>En ambos casos: 1 pastilla de sodio/h.</p>
-        </div>
-      </div>
-      <div style="font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem;">Post (primeros 30 min)</div>
-      <p style="font-size:13px;color:#444;line-height:1.6;">Igual que los modelos anteriores: 63–76 g CHO. Si la recuperación es &lt;24h: mantener 1,2 g/kg/h CHO durante las primeras 3–4h.</p>
-      <p style="font-size:12px;color:#888;border-left:2px solid #FAC775;padding-left:8px;margin-top:8px;line-height:1.5;">Opción isotónica casera: 500 ml agua + 30 g azúcar + 1 cda. miel + ½ cdita. sal.</p>
-    </div>
-  </div>
-
-  <!-- Nota sodio -->
-  <div style="background:#F3F0FB;border:1px solid #C9BFEF;border-radius:10px;padding:0.85rem 1.1rem;margin-top:4px;">
-    <div style="font-size:12px;font-weight:600;color:#3C2E7A;margin-bottom:6px;">💊 Pastillas de sodio</div>
-    <p style="font-size:13px;color:#444;line-height:1.6;">En esfuerzos &gt;90 min con calor o sudoración alta. Objetivo: <strong>300–700 mg Na/h</strong> según nivel de sudoración. Una pastilla estándar aporta 200–300 mg Na — tomar 1–2/h. Alternativa: ½ cdita. de sal en el bidón (≈1.000 mg Na/L).</p>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════
-     PRÓXIMA REVISIÓN
-════════════════════════════════════════════════ -->
-<div style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid #e5e5e5;">
-  <div class="section-label">Próxima revisión</div>
-  <div style="display:flex;align-items:center;gap:14px;background:#fafafa;border:1px solid #e5e5e5;border-radius:12px;padding:1rem 1.25rem;flex-wrap:wrap;">
-    <div style="font-size:28px;">📅</div>
-    <div style="flex:1;min-width:200px;">
-      <div style="font-size:16px;font-weight:500;color:#111;">Miércoles 14 de octubre de 2026 · 13:00 h</div>
-      <div style="font-size:12px;color:#999;margin-top:3px;">Revisión de adherencia y sensaciones · Ajuste de plan si procede</div>
-    </div>
-    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Revisi%C3%B3n+nutricional+%E2%80%94+Javier+Calduch&dates=20261014T110000Z%2F20261014T120000Z&details=Revisi%C3%B3n+de+adherencia+y+sensaciones.+Ajuste+de+plan+si+procede.&location=NutriLogos" target="_blank" style="display:inline-flex;align-items:center;gap:7px;background:#0d3d4f;color:#fff;text-decoration:none;border-radius:10px;padding:9px 18px;font-size:13px;font-weight:500;letter-spacing:0.02em;white-space:nowrap;">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Añadir al calendario
-    </a>
-  </div>
-</div>
-
-<script>
-buildShopTabs();
-renderShop();
 
 /* ═══════════════════════════════
    RECETAS
@@ -1387,6 +1351,10 @@ function toggleReceta(i) {
   cards[i].classList.toggle("open");
 }
 
+buildTabs();
+render();
+buildShopTabs();
+renderShop();
 buildRecetas();
 </script>
 </body>
