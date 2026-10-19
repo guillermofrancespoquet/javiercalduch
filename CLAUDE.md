@@ -42,11 +42,11 @@ Si algo debería cambiar en el estándar general (no solo para Javier), no se co
 
 ## Perfil de la persona: dónde vive y cómo se actualiza
 
-- El perfil (métricas, somatotipo, pliegues, perímetros, bioimpedancia) **ya no está en el HTML**: se ve en la app. Aquí, en "Datos del cliente", se guarda como referencia. Cada vez que llegan nuevos PDFs de antropometría/bioimpedancia se actualizan esos datos aquí y las **Impresiones del profesional** del HTML (se nombra el cambio de dato frente a la medición anterior).
+- El perfil (métricas, somatotipo, pliegues, perímetros, bioimpedancia) **ya no está en el HTML**: se ve en la app. Aquí, en "Datos del cliente", queda solo como referencia histórica de la valoración del 25/08/2026. Lo que sigue en el HTML y se actualiza cuando Guille lo pida son las **Impresiones del profesional** (se nombra el cambio de dato frente a la medición anterior).
 - Cada dato nuevo muestra la **comparativa con la medición anterior** con color verde (mejora) o rojo (empeora). Guille indica qué énfasis dar en las impresiones (p. ej. valor Z muscular, LDL); respétalo.
 - Impresiones: concisas, sin sobreexplicar por qué se consiguieron los resultados. Colores semánticos de puntos: verde logro, azul cambio de objetivo, ámbar vigilar, coral alerta.
 - Suplementación: sin nombres de marca (p. ej. pastillas de sodio). Geles: ofrecer también la opción de 55–60 g de CHO. Para guayaba, usar solo la forma sólida. **Excepción acordada con Guille el 19/10/2026:** se mantiene "IsoDrink" en la sección de intraentreno.
-- Mediciones registradas hasta ahora: 06/05, 15/06 y 25/08/2026. Próxima medición directa: la semana siguiente a la sesión online del 1/10/2026. **Última revisión programada: miércoles 14/10/2026 a las 13:00 h, para recoger mediciones y ajustar la planificación si procede** (fecha ya pasada; resultados pendientes de registrar aquí). La próxima revisión ya no se muestra en el HTML: la gestiona la app.
+- Mediciones registradas aquí: 06/05, 15/06 y 25/08/2026. Las mediciones posteriores y la revisión del 14/10/2026 (ya realizada) las ve Javier en la app y no se registran en este archivo. Las revisiones ya no se muestran en el HTML: las gestiona la app.
 
 ## Contexto de Javier
 
@@ -70,7 +70,7 @@ Si algo debería cambiar en el estándar general (no solo para Javier), no se co
 
 ## Datos del cliente (retirados del HTML el 19/10/2026)
 
-Fuente: valoración del 25/08/2026 por Guillermo Francés. Entre paréntesis, la medición previa (15/06/2026) cuando existe. Al llegar nuevas mediciones, actualizar aquí con la comparativa.
+Fuente: valoración del 25/08/2026 por Guillermo Francés. Entre paréntesis, la medición previa (15/06/2026) cuando existe. Referencia histórica: los datos vigentes están en la app.
 
 **Descripción:** hombre · 27 años · 173,5 cm · 62,70 kg. Psicólogo, vida activa, buena disponibilidad para cocinar. No fuma, no bebe, sueño sin registrar. Aversiones/exclusiones: sin alubias, sin marisco, sin quesos fuertes.
 
