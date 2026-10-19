@@ -305,10 +305,10 @@
           <td style="background:#f7f7f7;padding:8px 6px;border-right:2px solid #e0e0e0;border-bottom:1px solid #eee;text-align:center;vertical-align:middle;">
             <span class="pn-badge badge-d" style="display:inline-block;">D</span>
           </td>
-          <td style="background:#f9fcf5;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Tostadas con crema de cacahuete y plátano</td>
+          <td style="background:#f9fcf5;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Tostadas con crema de cacahuete y plátano, y yogur de soja</td>
           <td style="background:#f9fcf5;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Tostadas con aguacate y tomate</td>
           <td style="background:#f9fcf5;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Tostadas con crema de cacahuete y manzana</td>
-          <td style="background:#f9fcf5;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Tostadas con yogur de soja, plátano y nueces</td>
+          <td style="background:#f9fcf5;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Tostadas con tomate y yogur de soja con plátano y nueces</td>
           <td style="background:#f9fcf5;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Tostadas con tortilla de garbanzo y aguacate</td>
           <td style="background:#f9fcf5;padding:8px 10px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Overnight oats con mix de semillas</td>
           <td style="background:#f9fcf5;padding:8px 10px;border-bottom:1px solid #eee;text-align:center;color:#333;line-height:1.4;">Según documento de competición</td>
@@ -546,12 +546,12 @@ const days = [
   /* ─── LUNES / RODAJE ─── */
   {
     short:"Lun", full:"Lunes", sport:"🧘 Descanso activo", sportClass:"rest",
-    sportBanner:"Semana de competición — descanso activo, con fuerza de activación suave si toca. Mantén los hidratos y la proteína. ~2.200 kcal · ~100 g proteína.",
+    sportBanner:"Semana de competición: fuerza de activación suave si toca. Mantén los hidratos y la proteína. ~2.200 kcal · ~100 g proteína.",
     meals:[
       { type:"D", time:"7:00–8:30",
-        name:"Tostadas integrales con crema de cacahuete, plátano y yogur de soja",
+        name:"Tostadas integrales con crema de cacahuete y plátano, y yogur de soja con chía",
         tags:[],
-        desc:"3 rebanadas de pan integral + 1 cda. de crema de cacahuete 100% + 1 plátano en rodajas + 125 g de yogur de soja o Alpro sin azúcares añadidos + 1 cdita. de semillas de chía + un puñado de frutos rojos + 1 cdita. de miel.\n250 ml de bebida vegetal enriquecida en calcio (café, té o aparte).",
+        desc:"3 rebanadas de pan integral + 1 cda. de crema de cacahuete 100% + 1 plátano en rodajas\n125 g de yogur de soja o Alpro sin azúcares añadidos + 1 cdita. de semillas de chía + un puñado de frutos rojos + 1 cdita. de miel\n250 ml de bebida vegetal enriquecida en calcio (café, té o aparte)",
         note:"Semana de competición: sin avena por si entrenas. El pan integral te da los hidratos con buena tolerancia. Usa siempre bebida vegetal enriquecida en calcio (≥120 mg/100 ml en etiqueta)." },
       { type:"C", time:"13:30–14:30",
         name:"Bowl de cuscús integral con tofu salteado y edamame",
@@ -574,7 +574,7 @@ const days = [
   /* ─── MARTES / FUERZA ─── */
   {
     short:"Mar", full:"Martes", sport:"🧘 Descanso activo", sportClass:"rest",
-    sportBanner:"Descanso activo — fuerza de activación suave si toca. Hidratos mantenidos y proteína alta. ~2.300 kcal · ~100 g proteína.",
+    sportBanner:"Fuerza de activación suave si toca. Hidratos mantenidos y proteína alta. ~2.300 kcal · ~100 g proteína.",
     meals:[
       { type:"D", time:"7:00–8:30",
         name:"Tostadas de masa madre con aguacate y tomate, y yogur de soja con plátano",
@@ -602,7 +602,7 @@ const days = [
   /* ─── MIÉRCOLES / RODAJE ─── */
   {
     short:"Mié", full:"Miércoles", sport:"🏃 Activación", sportClass:"run",
-    sportBanner:"Día de activación — 8 km suaves, con fuerza de activación suave si toca. Desayuno sin avena y comida fresca sin cocinar: cuscús con gazpacho. ~2.450 kcal · ~95 g proteína.",
+    sportBanner:"8 km suaves, con fuerza de activación suave si toca. Desayuno sin avena y comida fresca sin cocinar: cuscús con gazpacho. ~2.450 kcal · ~95 g proteína.",
     meals:[
       { type:"D", time:"7:00–8:30",
         name:"Tostadas integrales con crema de cacahuete, manzana y yogur de soja",
@@ -630,13 +630,13 @@ const days = [
   /* ─── JUEVES / FUERZA ─── */
   {
     short:"Jue", full:"Jueves", sport:"🧘 Descanso activo", sportClass:"rest",
-    sportBanner:"Descanso activo — fuerza de activación suave si toca; la merienda sirve de pre o post según horario. ~2.300 kcal · ~100 g proteína.",
+    sportBanner:"Fuerza de activación suave si toca; la merienda sirve de pre o post según horario. ~2.200 kcal · ~100 g proteína.",
     meals:[
       { type:"D", time:"7:00–8:30",
-        name:"Tostadas integrales con yogur de soja, plátano y nueces",
+        name:"Tostadas integrales con tomate y yogur de soja con plátano, nueces y semillas",
         tags:[],
-        desc:"2 rebanadas de pan integral + 1 cda. de mix de semillas (lino, chía, calabaza) por encima\n125 g de yogur de soja o Alpro sin azúcares añadidos + 1 plátano en rodajas + frutos rojos al gusto + 15 g de nueces picadas + canela al gusto\n250 ml de bebida vegetal enriquecida en calcio (café, té o aparte)",
-        note:"Sin avena por si entrenas fuerza de activación; si entrenas por la mañana, tómalo 45–60 min antes. El mix de semillas aporta omega-3, calcio y fibra de golpe." },
+        desc:"2 rebanadas de pan integral + tomate en rodajas\n125 g de yogur de soja o Alpro sin azúcares añadidos + 1 plátano en rodajas + frutos rojos al gusto + 15 g de nueces picadas + 1 cda. de mix de semillas (lino, chía, calabaza) + canela al gusto\n250 ml de bebida vegetal enriquecida en calcio (café, té o aparte)",
+        note:"Sin avena por si entrenas fuerza de activación; si entrenas por la mañana, tómalo 45–60 min antes. El mix de semillas del yogur aporta omega-3, calcio y fibra de golpe." },
       { type:"C", time:"13:30–14:30",
         name:"Ensalada templada de quinoa con garbanzos, boniato y tahini",
         tags:["batch"],
@@ -645,12 +645,12 @@ const days = [
       { type:"Me", time:"17:00–17:30",
         name:"Smoothie proteico pre o post entreno de fuerza",
         tags:[],
-        desc:"1 scoop de proteína en polvo + 2 plátanos + 300 ml de bebida vegetal enriquecida en calcio + canela. Batir todo junto.",
+        desc:"1 scoop de proteína en polvo + 1 plátano + 300 ml de bebida vegetal enriquecida en calcio + canela. Batir todo junto.",
         note:"Si el entreno es vespertino (+18h): tomar 60–90 min antes como pre-entreno. Si es matutino: tomar como recuperación post-entreno en la ventana de 30 min tras acabar." },
       { type:"Ce", time:"20:30–21:30",
         name:"Poke bowl con tofu salteado, edamame y aliño de miso",
         tags:["batch"],
-        desc:"80 g de arroz basmati en crudo (hervir según indicaciones del paquete) + 160 g de tofu firme salteado en tamari + jengibre + ajo (o usar salsa teriyaki comprada para ir más rápido) + 100 g de edamame + pepino en rodajas + zanahoria rallada + 1 cda. de semillas de sésamo tostado. Aliño de miso: 1 cdita. pasta miso + 1 cda. zumo de lima + 1 cdita. AOVE + ½ cdita. jengibre fresco rallado + 1 cdita. agua.",
+        desc:"80 g de arroz basmati en crudo (hervir según indicaciones del paquete) + 160 g de tofu firme salteado en tamari + jengibre + ajo (o usar salsa teriyaki comprada para ir más rápido) + 100 g de edamame + pepino en rodajas + 60 g de mango en cubitos + 1 cda. de semillas de sésamo tostado. Aliño de miso: 1 cdita. pasta miso + 1 cda. zumo de lima + 1 cdita. AOVE + ½ cdita. jengibre fresco rallado + 1 cdita. agua.",
         note:"Cena alta en proteína y recuperación muscular. El aliño de miso se hace en 2 min y se conserva 5 días tapado en nevera. Si sobró tofu del lunes, usarlo aquí directamente sin necesidad de volver a cocinar." }
     ]
   },
@@ -658,7 +658,7 @@ const days = [
   /* ─── VIERNES / FUERZA ─── */
   {
     short:"Vie", full:"Viernes", sport:"🚶 Paseo", sportClass:"rest",
-    sportBanner:"Paseo — descanso activo. Preparar overnight oats del sábado esta noche. Para la carga de hidratos sigue el documento de competición de la app. ~2.400 kcal · ~100 g proteína.",
+    sportBanner:"Descanso activo. Preparar overnight oats del sábado esta noche. Para la carga de hidratos sigue el documento de competición de la app. ~2.400 kcal · ~100 g proteína.",
     meals:[
       { type:"D", time:"7:00–8:30",
         name:"Tostadas integrales con tortilla de garbanzo (o huevo) y aguacate",
@@ -686,7 +686,7 @@ const days = [
   /* ─── SÁBADO / RODAJE + CENA LIBRE ─── */
   {
     short:"Sáb", full:"Sábado", sport:"🏁 Víspera de carrera", sportClass:"rest",
-    sportBanner:"Víspera de carrera — descanso. Para el día previo sigue el documento de competición de la app: manda sobre las comidas de este día.",
+    sportBanner:"Descanso. Para el día previo sigue el documento de competición de la app: manda sobre las comidas de este día.",
     meals:[
       { type:"D", time:"7:00–8:30",
         name:"Overnight oats con mix de semillas y frutos rojos",
@@ -715,8 +715,8 @@ const days = [
   {
     short:"Dom ★", full:"Domingo", sport:"🏁 Carrera 21K", sportClass:"run",
     libre:true,
-    sportBanner:"Día de carrera — Media Maratón de Valencia. Desayuno, pre, intra y post según el documento de competición de la app, que manda sobre las comidas de este día. La cena libre pasa a hoy para celebrarlo. Batch cooking opcional.",
-    suppl:"💊 Suplementación semanal — recordatorio domingo:\n• Vitamina B12: 1 pastilla (si no se tomó el viernes). Fijar un día fijo cada semana.\n• Vitamina D: 1 perla de 2.000 UI hoy. En meses de baja exposición solar (oct–marzo) no saltarse. En verano con buena exposición diaria se puede valorar reducir con el nutricionista.\n• Calcio: no suplementar de forma rutinaria si la dieta está bien planificada. Revisar que durante la semana hayan aparecido: bebida vegetal enriquecida (≥120 mg Ca/100 ml), tahini, almendras, brócoli o tofu enriquecido con calcio. Si alguna semana falla todo esto, comentarlo en revisión.",
+    sportBanner:"Media Maratón de Valencia. Desayuno, pre, intra y post según el documento de competición de la app, que manda sobre las comidas de este día. La cena libre pasa a hoy para celebrarlo. Batch cooking opcional.",
+    suppl:"💊 Suplementación semanal — recordatorio domingo:\n• Vitamina B12: 1 pastilla (si no se tomó el viernes). Fijar un día fijo cada semana.\n• Vitamina D: 1 perla de 2.000 UI hoy. En meses de baja exposición solar (oct–marzo) recomendable.\n• Calcio: no suplementar de forma rutinaria si la dieta está bien planificada. Revisar que durante la semana hayan aparecido: bebida vegetal enriquecida (≥120 mg Ca/100 ml), tahini, almendras, brócoli o tofu enriquecido con calcio. Si alguna semana falla todo esto, comentarlo en revisión.",
     batchCooking:{
       title:"🥘 Batch cooking del domingo — opcional pero recomendado",
       items:[
@@ -885,10 +885,11 @@ const shopCategories = [
       { name: "Brotes verdes o lechuga (bolsa)", qty: "~150 g", note: "Ensaladas múltiples días." },
       { name: "Pepino", qty: "1–2 piezas", note: "Lunes merienda, jueves cena, miércoles almuerzo (80 g)." },
       { name: "Puerro", qty: "1 pieza", note: "Domingo almuerzo." },
-      { name: "Plátano", qty: "8–9 piezas", note: "Desayunos, meriendas y smoothies." },
+      { name: "Plátano", qty: "7–8 piezas", note: "Desayunos, meriendas y smoothies." },
       { name: "Kiwi", qty: "3–4 piezas", note: "Miércoles merienda, sábado merienda. Vitamina C." },
       { name: "Manzana", qty: "1–2 piezas", note: "Miércoles desayuno (rallada)." },
       { name: "Frutos rojos (congelados o frescos)", qty: "200–250 g", note: "Varios desayunos. Congelados más económico." },
+      { name: "Mango (fresco o congelado)", qty: "1 mango pequeño o 100 g congelado en cubitos", note: "Jueves cena (poke bowl, 60 g en cubitos)." },
       { name: "Fruta variada (naranja, pera...)", qty: "1–2 de cada", note: "Postre en múltiples comidas." },
       { name: "Hummus", qty: "1 bote (250 g)", note: "Lunes merienda." },
       { name: "Levadura nutricional", qty: "1 bote pequeño", note: "Martes almuerzo. Sabor y B12 extra." },
