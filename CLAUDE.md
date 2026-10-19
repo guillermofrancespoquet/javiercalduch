@@ -8,23 +8,19 @@ Las instrucciones de estructura y estética **no son de este repo**: son general
 
 1. **Plantilla v5.0** (copiada en la raíz del repo como `INSTRUCCIONES_PLANTILLA_NUTRILOGOS_v5.0.txt`; si falta, pídele el archivo a Guille). Antes de cualquier cambio estructural, de CSS, de JS o de bloques nuevos, léela. Si el repo y la plantilla discrepan, manda la plantilla, salvo las excepciones de Javier listadas más abajo.
 2. **Metodología NutriLogos** (100% plant-based, flexible según individualización). Las decisiones nutricionales se apoyan en ella; no se improvisan criterios clínicos.
-3. **Este archivo** para el contexto y las particularidades de Javier.
+3. **Instrucciones de estilo app v1.0** (`INSTRUCCIONES_ESTILO_APP_NUTRILOGOS_v1.0.txt`, en la raíz del repo): capa visual solo de estilo (CSS y colores) sobre la plantilla v5.0. **`index.html` es la versión app**: estructura y JS de v5.0, estilo de app v1.0 (ver excepciones).
+4. **Este archivo** para el contexto y las particularidades de Javier.
 
 Si algo debería cambiar en el estándar general (no solo para Javier), no se corrige únicamente aquí: se lo señalas a Guille para que actualice la plantilla en el proyecto y todos los clientes sigan la misma línea.
 
 ## Reglas de la plantilla v5.0 que más se tocan
 
-- Orden de bloques: cabecera → descripción del cliente (5 píldoras, incluida "Aversiones / exclusiones") → Objetivo (bloque azul) → Perfil de la persona → tabla resumen semanal (`id="printArea"`) → menú por días → lista de compra → suplementación → recetas → sección personalizada → Próxima revisión.
+- Orden de bloques en `index.html` (variante app): cabecera → Objetivo (bloque teal) → Próximos eventos → Impresiones del profesional → tabla resumen semanal (`id="printArea"`) → menú por días → lista de compra → suplementación → recetas → intraentreno (desplegable). **No están en el HTML** descripción del cliente, perfil de la persona con métricas ni próxima revisión: los muestra la app; sus datos viven en la sección "Datos del cliente" de este archivo.
 - CSS estándar: **no modificar**. Funciones JS de la sección 6.4: copiar exactamente. Todo el JS en **un único `<script>` al final del `<body>`**, con las llamadas (`buildTabs()`, `render()`, `buildShopTabs()`, `renderShop()`, `buildRecetas()`) después de que exista el HTML al que apuntan.
 - Separación entre secciones: solo `margin-top:2.5rem` y el `border-bottom` de `.section-label`. **Sin `<hr>`**, sin `border-top`/`padding-top` en los wrappers.
-- Espaciado interno del perfil (v5.0): `pn-perfil-grid-2` con `margin-bottom:1.75rem`; somatotipo con `margin-top:2rem;margin-bottom:1.75rem`; `pn-perfil-section-row` con `margin-top:1.75rem`; impresiones con `margin-top:1.75rem`; tarjetas antro secundarias con `margin-top:0.85rem`.
-- Somatotipo: div con estilos inline (sección 4.3), no la clase `pn-soma-card`.
-- Títulos: **"Datos bioimpedancia"**, sin nombres de marca de dispositivo (nunca "InBody"). El bloque "Control de peso (objetivo)" **ya no existe** en v5.0; esa información va en el Objetivo o en las impresiones.
 - Badges: D / C / Me / Ce; A (Almuerzo, media mañana) solo si el cliente la lleva. C es mediodía, Ce es noche; no confundir A con C.
 - Ingredientes de cada comida: píldoras (`\n` en `desc` crea una píldora). En la tabla semanal, texto plano.
 - `sportBanner` con kcal/macros solo si aporta valor para Javier; decisión de Guille caso por caso.
-- Botones de PDF en el perfil: estilo `#0d3d4f`, rutas relativas con `./` (sección 4.4).
-- Botón de calendario de "Próxima revisión": si no hay fecha exacta, `pointer-events:none;opacity:0.4`. Fechas UTC `YYYYMMDDTHHMMSSZ`.
 
 ## Cómo se trabaja con Guille
 
@@ -44,13 +40,13 @@ Si algo debería cambiar en el estándar general (no solo para Javier), no se co
 - Jerarquía de lácteos si aparecen: yogur de soja > queso fresco batido / yogur griego ligero > yogur griego normal / lácteos enteros (evitar). Huevo prácticamente fuera del plan base (en Javier existe como alternativa puntual a la tortilla de garbanzo, no como protagonista).
 - Batch cooking siempre **opcional**. La cena libre nunca se elimina.
 
-## Perfil de la persona: cómo se actualiza
+## Perfil de la persona: dónde vive y cómo se actualiza
 
-- Cada vez que llegan nuevos PDFs de antropometría/bioimpedancia, se actualizan métricas, somatotipo, pliegues, perímetros, bioimpedancia, impresiones y los botones de PDF.
+- El perfil (métricas, somatotipo, pliegues, perímetros, bioimpedancia) **ya no está en el HTML**: se ve en la app. Aquí, en "Datos del cliente", queda solo como referencia histórica de la valoración del 25/08/2026. Lo que sigue en el HTML y se actualiza cuando Guille lo pida son las **Impresiones del profesional** (se nombra el cambio de dato frente a la medición anterior).
 - Cada dato nuevo muestra la **comparativa con la medición anterior** con color verde (mejora) o rojo (empeora). Guille indica qué énfasis dar en las impresiones (p. ej. valor Z muscular, LDL); respétalo.
 - Impresiones: concisas, sin sobreexplicar por qué se consiguieron los resultados. Colores semánticos de puntos: verde logro, azul cambio de objetivo, ámbar vigilar, coral alerta.
-- Suplementación: sin nombres de marca (p. ej. pastillas de sodio). Geles: ofrecer también la opción de 55–60 g de CHO. Para guayaba, usar solo la forma sólida.
-- Mediciones registradas hasta ahora: 06/05, 15/06 y 25/08/2026. Próxima medición directa: la semana siguiente a la sesión online del 1/10/2026. **Próxima revisión: miércoles 14/10/2026 a las 13:00 h, para recoger mediciones y ajustar la planificación si procede** (ya reflejada en el HTML; si cambia la fecha o hay una nueva, actualizar texto y botón de calendario, y sin fecha exacta dejar el botón atenuado).
+- Suplementación: sin nombres de marca (p. ej. pastillas de sodio). Geles: ofrecer también la opción de 55–60 g de CHO. Para guayaba, usar solo la forma sólida. **Excepción acordada con Guille el 19/10/2026:** se mantiene "IsoDrink" en la sección de intraentreno.
+- Mediciones registradas aquí: 06/05, 15/06 y 25/08/2026. Las mediciones posteriores y la revisión del 14/10/2026 (ya realizada) las ve Javier en la app y no se registran en este archivo. Las revisiones ya no se muestran en el HTML: las gestiona la app.
 
 ## Contexto de Javier
 
@@ -72,13 +68,30 @@ Si algo debería cambiar en el estándar general (no solo para Javier), no se co
   - Pauta de líquidos/sodio e hidratos por hora para la media: a la espera de los datos del test de sudoración.
 - Calcio y vitamina D: hay pauta específica en el plan; no la retires al editar suplementación.
 
+## Datos del cliente (retirados del HTML el 19/10/2026)
+
+Fuente: valoración del 25/08/2026 por Guillermo Francés. Entre paréntesis, la medición previa (15/06/2026) cuando existe. Referencia histórica: los datos vigentes están en la app.
+
+**Descripción:** hombre · 27 años · 173,5 cm · 62,70 kg. Psicólogo, vida activa, buena disponibilidad para cocinar. No fuma, no bebe, sueño sin registrar. Aversiones/exclusiones: sin alubias, sin marisco, sin quesos fuertes.
+
+**Métricas principales:** condición física 88,9/100 (89,5) · peso 62,70 kg (63,05), IMC 20,83, normopeso · talla/envergadura 173,5/169,5 cm, braquicórmico, E. relativa 0,98 · % masa grasa Yuhasz 8,49 % (8,88), 5,32 kg, Σ6 pliegues 50,00 mm · % masa muscular 47,72 % (47,40), 29,92 kg, Z Phantom +0,90 · LBM 55,5 kg (55,8), músculo esquelético 35,9 kg (36,1) · TMB 1.568 kcal (1.573), edad metabólica 25 años (24) · % tejido adiposo 24,12 % (25,10), 15,12 kg (Ross y Kerr, 1993) · ratio cintura/cadera 0,88 (0,93), riesgo cardiovascular bajo (antes moderado).
+
+**Somatotipo (Carter-Heath):** actual 2,23 — 2,53 — 3,39, ecto-mesomorfo. Previo (15/06/2026): 2,34 — 2,66 — 3,33 (endomorfia −0,11, mesomorfia −0,13, ectomorfia +0,06; perfil algo más lineal, vigilar que la base de fuerza no se resienta con el volumen aeróbico). Grupo de referencia ISAK 0,00 — 0,00 — 0,00 (dentro del rango normativo).
+
+**Pliegues (mm):** tríceps 10,00 (10,00) · subescapular 7,50 (7,50) · bíceps 2,00 (1,50) · cresta ilíaca 7,00 (7,00) · supraespinal 5,50 (6,50) · abdominal 12,00 (13,50) · muslo 9,00 (11,00) · pierna 6,00 (5,50) · Σ6 50,00 (54,00) · Σ8 59,00 (62,50).
+
+**Perímetros (cm):** cintura 76,90 (78,50) · cadera 87,00 (84,70) · brazo relajado/contraído 30,00/32,50 · muslo/pierna 50,54/34,70 (muslo +0,94).
+
+**Bioimpedancia:** agua corporal 40,1 L (40,3), normal · proteína 12,7 kg, normal · masa ósea 2,78 kg (2,79), deficiente · masa grasa 7,21 kg (7,31), deficiente · % grasa PBF 11,5 % (11,6), normal · músculo esquelético 35,9 kg (36,1), alto · grasa visceral nivel 3 (4), normal · fuerza superior e inferior normales · equilibrio superior e inferior levemente desequilibrados · IMC 20,7, normal. Bloque "Control de peso (objetivo)" retirado: peso deseado 65,28 kg, control de grasa +2,58 kg, control muscular +0 kg.
+
 ## Excepciones de Javier respecto a la plantilla v5.0
 
 Son decisiones conscientes de Guille; no las "corrijas" sin preguntar:
 
 - **"Próximos eventos"** va justo después del bloque Objetivo (la plantilla coloca las secciones personalizadas antes de "Próxima revisión"). Tras el simulacro se retiró y **ahora contiene el 21K de Valencia (domingo 25/10/2026)**, **sin documento incrustado ni botón a PDF** (hecho el 2/10/2026): Guille preparará la estrategia de competición de otra forma, y la tarjeta del evento debe dejar claro que ese contenido llegará de forma parecida a como se hizo con el simulacro. Si en el futuro se enlaza un archivo, comprueba su carpeta real antes de tocar cualquier `href` y mantén la ruta que funcione en GitHub Pages (el repo usa `documentos/`; la plantilla propone `./assets/`).
 - **Lista de compra:** el estado tachado se conserva **dentro de la sesión** al cambiar de pestaña (objeto JS `shopState`), pero no entre sesiones, para evitar desincronizaciones cuando el HTML se actualiza en GitHub. Verifica en el archivo cómo está implementado antes de modificarlo; la v5.0 de referencia solo usa `classList.toggle('done')` sin memoria al cambiar de pestaña.
-- **Estilo alineado con v5.0 el 2/10/2026** (CSS estándar verbatim, sin `<hr>` ni `border-top`/`padding-top` en wrappers, espaciados del perfil, un único `<script>` al final, bloque "Control de peso" eliminado, leyenda en la tabla semanal). El contenido no se toca al alinear estilo: cada planificación es distinta. Ante nuevas versiones de la plantilla, alinear solo cuando Guille lo pida.
+- **`index.html` es la versión app (19/10/2026):** estilo de las instrucciones app v1.0 (tokens `:root`, Inter, CSS completo de la sección 4) sobre la estructura y el JS de v5.0. El antiguo `index.html` v5.0 (con descripción, perfil y próxima revisión) se eliminó; sigue en el historial de git y sus datos están en "Datos del cliente". "Próximos eventos" se mantiene a petición de Guille. "Nutrición intraentreno — bici larga (>2h)" es un **desplegable** (`<details>` con los modelos A/B/C anidados como acordeón; se usa `<details>` porque el CSS `.pn-receta.open .pn-receta-body` abriría todos los acordeones anidados). Tabla semanal y su leyenda con el estilo original v5.0.
+- **Estilo alineado con v5.0 el 2/10/2026** (sin `<hr>` ni `border-top`/`padding-top` en wrappers, un único `<script>` al final, leyenda en la tabla semanal). El contenido no se toca al alinear estilo: cada planificación es distinta. Ante nuevas versiones de la plantilla o del estilo app, alinear solo cuando Guille lo pida.
 - Incluye recetas propias en el acordeón (ensalada de cuscús con gazpacho, gazpacho de remolacha, entre otras) y una sección de hidratación/intraentreno (bici larga >2h) cuyos modelos A/B/C son **desplegables**, reutilizando las clases del acordeón de recetas (`pn-receta`, sin CSS nuevo).
 
 ## PDFs de marca (simulacros, estrategias, recetas)
