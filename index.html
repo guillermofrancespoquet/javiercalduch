@@ -271,7 +271,7 @@
       </div>
       <div class="pn-imp-item">
         <div class="pn-imp-dot pn-imp-dot-blue"></div>
-        <div><strong>Semana de competición.</strong> Baja el volumen de entreno y mantienes la proteína. Para el día previo y el día de carrera sigue el documento de competición de la app.</div>
+        <div><strong>Semana de competición.</strong> Baja el volumen de entreno y subes poco a poco los hidratos hasta la carga del sábado y el domingo. Para el día previo y el día de carrera sigue el documento de competición de la app.</div>
       </div>
     </div>
 </div>
@@ -602,7 +602,7 @@ const days = [
   /* ─── MIÉRCOLES / RODAJE ─── */
   {
     short:"Mié", full:"Miércoles", sport:"🏃 Activación", sportClass:"run",
-    sportBanner:"8 km suaves, con fuerza de activación suave si toca. Desayuno sin avena y comida fresca sin cocinar: cuscús con gazpacho. ~2.450 kcal · ~95 g proteína.",
+    sportBanner:"8 km suaves, con fuerza de activación suave si toca. Desayuno sin avena y comida fresca sin cocinar: cuscús con gazpacho. Hidratos algo más altos. ~2.450 kcal · ~92 g proteína.",
     meals:[
       { type:"D", time:"7:00–8:30",
         name:"Tostadas integrales con crema de cacahuete, manzana y yogur de soja",
@@ -612,7 +612,7 @@ const days = [
       { type:"C", time:"13:30–14:30",
         name:"Ensalada de cuscús con gazpacho y tofu",
         tags:[],
-        desc:"220 g de cuscús seco hidratado con 330 ml de gazpacho comercial frío (tapar 20 min y remover con tenedor) + 150 g de tofu firme en dados dorado en sartén con especias + 80 g de pepino + 100 g de tomate + 60 g de maíz dulce cocido + un puñado de albahaca fresca. Aliño: zumo de limón + AOVE al gusto.",
+        desc:"220 g de cuscús seco hidratado con 330 ml de gazpacho comercial frío (tapar 20 min y remover con tenedor) + 120 g de tofu firme en dados dorado en sartén con especias + 80 g de pepino + 100 g de tomate + 60 g de maíz dulce cocido + un puñado de albahaca fresca. Aliño: zumo de limón + AOVE al gusto.",
         note:"Receta sin fuego apenas — solo dorar el tofu 5–6 min. El gazpacho hidrata el cuscús y suma verdura líquida sin pasos extra. Ideal para días calurosos de rodaje." },
       { type:"Me", time:"17:00–17:30",
         name:"Tortitas de arroz con crema de cacahuete y plátano",
@@ -622,7 +622,7 @@ const days = [
       { type:"Ce", time:"20:30–21:30",
         name:"Curry de garbanzos con espinacas y patata",
         tags:[],
-        desc:"200 g de garbanzos cocidos (de bote, escurridos) + espinacas frescas (puñado grande) + 150 ml de crema de soja + 200 g de tomate triturado + curry en polvo + cúrcuma + comino. 200 g de patata en crudo cortada en dados pequeños, cocida 15–20 min en la propia salsa. Ensalada verde con 1 cdita. de AOVE.",
+        desc:"200 g de garbanzos cocidos (de bote, escurridos) + espinacas frescas (puñado grande) + 150 ml de crema de soja + 200 g de tomate triturado + curry en polvo + cúrcuma + comino. 250 g de patata en crudo cortada en dados pequeños, cocida 15–20 min en la propia salsa. Ensalada verde con 1 cdita. de AOVE.",
         note:"Los garbanzos aportan calcio vegetal (~80 mg/100 g). La cúrcuma tiene efecto antiinflamatorio relevante con el volumen de entrenamiento actual. Hacer el doble de curry si se quiere tener para el jueves." }
     ]
   },
@@ -630,7 +630,7 @@ const days = [
   /* ─── JUEVES / FUERZA ─── */
   {
     short:"Jue", full:"Jueves", sport:"🧘 Descanso activo", sportClass:"rest",
-    sportBanner:"Fuerza de activación suave si toca; la merienda sirve de pre o post según horario. ~2.200 kcal · ~100 g proteína.",
+    sportBanner:"Fuerza de activación suave si toca; la merienda sirve de pre o post según horario. Hidratos más altos que ayer. ~2.200 kcal · ~92 g proteína.",
     meals:[
       { type:"D", time:"7:00–8:30",
         name:"Tostadas integrales con tomate y yogur de soja con plátano, nueces y semillas",
@@ -640,17 +640,17 @@ const days = [
       { type:"C", time:"13:30–14:30",
         name:"Ensalada templada de quinoa con garbanzos, boniato y tahini",
         tags:["batch"],
-        desc:"1 vasito de quinoa precocinada (125 g) + 200 g de garbanzos cocidos (de bote, escurridos) + 250 g de boniato asado en cubos (del batch) + rúcula + aliño: 1 cda. de tahini + zumo de limón + 1 cdita. de AOVE + comino y pimentón al gusto. 1 fruta.",
+        desc:"1 vasito de quinoa precocinada (125 g) + 200 g de garbanzos cocidos (de bote, escurridos) + 300 g de boniato asado en cubos (del batch) + rúcula + aliño: 1 cda. de tahini + zumo de limón + 1 cdita. de AOVE + comino y pimentón al gusto. 1 fruta.",
         note:"El tahini es la fuente de calcio vegetal más concentrada del plan (~130 mg/cda.). La combinación quinoa + garbanzos cubre todos los aminoácidos esenciales. Todo del batch: 0 minutos de cocina." },
       { type:"Me", time:"17:00–17:30",
         name:"Smoothie proteico pre o post entreno de fuerza",
         tags:[],
-        desc:"1 scoop de proteína en polvo + 1 plátano + 300 ml de bebida vegetal enriquecida en calcio + canela. Batir todo junto.",
+        desc:"¾ de scoop de proteína en polvo + 1 plátano + 300 ml de bebida vegetal enriquecida en calcio + canela. Batir todo junto.",
         note:"Si el entreno es vespertino (+18h): tomar 60–90 min antes como pre-entreno. Si es matutino: tomar como recuperación post-entreno en la ventana de 30 min tras acabar." },
       { type:"Ce", time:"20:30–21:30",
         name:"Poke bowl con tofu salteado, edamame y aliño de miso",
         tags:["batch"],
-        desc:"80 g de arroz basmati en crudo (hervir según indicaciones del paquete) + 160 g de tofu firme salteado en tamari + jengibre + ajo (o usar salsa teriyaki comprada para ir más rápido) + 100 g de edamame + pepino en rodajas + 60 g de mango en cubitos + 1 cda. de semillas de sésamo tostado. Aliño de miso: 1 cdita. pasta miso + 1 cda. zumo de lima + 1 cdita. AOVE + ½ cdita. jengibre fresco rallado + 1 cdita. agua.",
+        desc:"90 g de arroz basmati en crudo (hervir según indicaciones del paquete) + 130 g de tofu firme salteado en tamari + jengibre + ajo (o usar salsa teriyaki comprada para ir más rápido) + 100 g de edamame + pepino en rodajas + 60 g de mango en cubitos + 1 cda. de semillas de sésamo tostado. Aliño de miso: 1 cdita. pasta miso + 1 cda. zumo de lima + 1 cdita. AOVE + ½ cdita. jengibre fresco rallado + 1 cdita. agua.",
         note:"Cena alta en proteína y recuperación muscular. El aliño de miso se hace en 2 min y se conserva 5 días tapado en nevera. Si sobró tofu del lunes, usarlo aquí directamente sin necesidad de volver a cocinar." }
     ]
   },
@@ -658,17 +658,17 @@ const days = [
   /* ─── VIERNES / FUERZA ─── */
   {
     short:"Vie", full:"Viernes", sport:"🚶 Paseo", sportClass:"rest",
-    sportBanner:"Descanso activo. Preparar overnight oats del sábado esta noche. Para la carga de hidratos sigue el documento de competición de la app. ~2.400 kcal · ~100 g proteína.",
+    sportBanner:"Descanso activo, con los hidratos aún más altos. Preparar overnight oats del sábado esta noche. Para la carga de hidratos sigue el documento de competición de la app. ~2.450 kcal · ~91 g proteína.",
     meals:[
       { type:"D", time:"7:00–8:30",
         name:"Tostadas integrales con tortilla de garbanzo (o huevo) y aguacate",
         tags:[],
-        desc:"3 rebanadas de pan integral con:\nOpción A — plant-based: tortilla de harina de garbanzo (3 cdas. harina de garbanzo + 6 cdas. agua + sal + cúrcuma + pimienta — ver receta). Cocinar en sartén con unas gotas de AOVE.\nOpción B — flexible: 2 huevos revueltos o a la plancha.\nEn ambas opciones: ½ aguacate en rodajas + tomate + 1 cdita. de AOVE. Café o té. 1 fruta.",
+        desc:"4 rebanadas de pan integral con:\nOpción A — plant-based: tortilla de harina de garbanzo (3 cdas. harina de garbanzo + 6 cdas. agua + sal + cúrcuma + pimienta — ver receta). Cocinar en sartén con unas gotas de AOVE.\nOpción B — flexible: 2 huevos revueltos o a la plancha.\nEn ambas opciones: ¼ de aguacate en rodajas + tomate + 1 cdita. de AOVE. Café o té. 1 fruta.",
         note:"Hoy o el domingo: recordar tomar la pastilla de B12 semanal (1 vez/semana, día fijo). La opción B (huevo) es compatible con los resultados de analítica actuales — no superar 1–2 veces/semana." },
       { type:"C", time:"13:30–14:30",
         name:"Seitán salteado con arroz basmati y verduras al wok",
         tags:["extra"],
-        desc:"180 g de seitán cortado en tiras, salteado con tamari + ajo + jengibre rallado. 80 g de arroz basmati en crudo (hervir según indicaciones del paquete). Verduras al wok: pimiento + calabacín + cebolla + zanahoria con AOVE y especias orientales. 1 cda. de semillas de sésamo.",
+        desc:"140 g de seitán cortado en tiras, salteado con tamari + ajo + jengibre rallado. 100 g de arroz basmati en crudo (hervir según indicaciones del paquete). Verduras al wok: pimiento + calabacín + cebolla + zanahoria con AOVE y especias orientales. 1 cda. de semillas de sésamo.",
         note:"Si hiciste batch el domingo, usa el arroz basmati ya cocido (aguanta 4 días en nevera) y solo saltea el seitán y las verduras." },
       { type:"Me", time:"17:00–17:30",
         name:"Smoothie de avena, plátano y crema de cacahuete",
@@ -678,7 +678,7 @@ const days = [
       { type:"Ce", time:"20:30–21:30",
         name:"Tofu al horno con boniato asado y ensalada de rúcula",
         tags:[],
-        desc:"180 g de tofu firme marinado en tamari + ajo + pimentón ahumado, horneado 20 min a 200°C. 250 g de boniato asado en cubos. Rúcula + tomate cherry + 1 cda. de AOVE + vinagre de Módena. 1 fruta al gusto.",
+        desc:"150 g de tofu firme marinado en tamari + ajo + pimentón ahumado, horneado 20 min a 200°C. 300 g de boniato asado en cubos. Rúcula + tomate cherry + 1 cda. de AOVE + vinagre de Módena. 1 fruta al gusto.",
         note:"Recordar preparar los overnight oats del sábado antes de dormir. El boniato puede ir al horno a la vez que el tofu — misma temperatura, mismo tiempo. Sin esfuerzo extra." }
     ]
   },
@@ -830,7 +830,7 @@ const shopCategories = [
     items: [
       { name: "Tofu firme", qty: "2 bloques (~400 g c/u)", note: "Lunes almuerzo, viernes cena, jueves cena, miércoles almuerzo (cuscús)." },
       { name: "Tofu (firme o suave)", qty: "1 bloque (150–200 g)", note: "Sábado cena (gazpacho de remolacha, triturado)." },
-      { name: "Seitán", qty: "180 g", note: "Viernes almuerzo." },
+      { name: "Seitán", qty: "140 g", note: "Viernes almuerzo." },
       { name: "Lentejas pardinas (secas)", qty: "500 g", note: "Batch cooking domingo. Lunes cena y sobrantes." },
       { name: "Soja texturizada (cruda)", qty: "30 g", note: "Martes almuerzo. Pesar en crudo antes de hidratar." },
       { name: "Garbanzos (bote)", qty: "3–4 botes (425 g c/u)", note: "Miércoles cena, jueves almuerzo, sábado almuerzo. Escurrir bien." },
@@ -845,13 +845,13 @@ const shopCategories = [
       { name: "Copos de avena", qty: "~100 g", note: "Viernes (smoothie) y sábado (overnight oats)." },
       { name: "Pan integral o masa madre", qty: "1 barra grande (~700 g)", note: "Desayunos de lunes a viernes, merienda del lunes, domingo almuerzo." },
       { name: "Pasta integral (cruda)", qty: "80 g", note: "Martes almuerzo." },
-      { name: "Arroz basmati (crudo)", qty: "160 g", note: "Jueves cena (80 g) + viernes almuerzo (80 g). Seguir indicaciones del paquete." },
+      { name: "Arroz basmati (crudo)", qty: "190 g", note: "Jueves cena (90 g) + viernes almuerzo (100 g). Seguir indicaciones del paquete." },
       { name: "Cuscús integral vasito precocinado", qty: "2 vasitos (125 g c/u)", note: "Lunes y sábado almuerzo. Solo hidratar 5 min, sin cocción." },
       { name: "Cuscús (seco)", qty: "220 g", note: "Miércoles almuerzo (ensalada con gazpacho). Hidratar con gazpacho, sin cocción." },
       { name: "Quinoa vasito precocinada", qty: "1 vasito (125 g)", note: "Jueves almuerzo. Abrir y mezclar directamente." },
       { name: "Tortitas de arroz", qty: "1 paquete", note: "Miércoles merienda." },
-      { name: "Boniato", qty: "600–700 g", note: "Batch cooking domingo. Lunes almuerzo, jueves almuerzo, viernes cena." },
-      { name: "Patata pequeña", qty: "~600 g", note: "Martes cena (200 g) + miércoles cena (200 g, curry) + domingo almuerzo (100 g)." }
+      { name: "Boniato", qty: "~800 g", note: "Batch cooking domingo. Lunes almuerzo, jueves almuerzo, viernes cena." },
+      { name: "Patata pequeña", qty: "~650 g", note: "Martes cena (200 g) + miércoles cena (250 g, curry) + domingo almuerzo (100 g)." }
     ]
   },
   {
