@@ -8,7 +8,8 @@ Las instrucciones de estructura y estética **no son de este repo**: son general
 
 1. **Plantilla v5.0** (copiada en la raíz del repo como `INSTRUCCIONES_PLANTILLA_NUTRILOGOS_v5.0.txt`; si falta, pídele el archivo a Guille). Antes de cualquier cambio estructural, de CSS, de JS o de bloques nuevos, léela. Si el repo y la plantilla discrepan, manda la plantilla, salvo las excepciones de Javier listadas más abajo.
 2. **Metodología NutriLogos** (100% plant-based, flexible según individualización). Las decisiones nutricionales se apoyan en ella; no se improvisan criterios clínicos.
-3. **Este archivo** para el contexto y las particularidades de Javier.
+3. **Instrucciones de estilo app v1.0** (`INSTRUCCIONES_ESTILO_APP_NUTRILOGOS_v1.0.txt`, en la raíz del repo): capa visual solo de estilo sobre la plantilla v5.0, para la versión `index_app.html` (ver excepciones).
+4. **Este archivo** para el contexto y las particularidades de Javier.
 
 Si algo debería cambiar en el estándar general (no solo para Javier), no se corrige únicamente aquí: se lo señalas a Guille para que actualice la plantilla en el proyecto y todos los clientes sigan la misma línea.
 
@@ -78,6 +79,7 @@ Son decisiones conscientes de Guille; no las "corrijas" sin preguntar:
 
 - **"Próximos eventos"** va justo después del bloque Objetivo (la plantilla coloca las secciones personalizadas antes de "Próxima revisión"). Tras el simulacro se retiró y **ahora contiene el 21K de Valencia (domingo 25/10/2026)**, **sin documento incrustado ni botón a PDF** (hecho el 2/10/2026): Guille preparará la estrategia de competición de otra forma, y la tarjeta del evento debe dejar claro que ese contenido llegará de forma parecida a como se hizo con el simulacro. Si en el futuro se enlaza un archivo, comprueba su carpeta real antes de tocar cualquier `href` y mantén la ruta que funcione en GitHub Pages (el repo usa `documentos/`; la plantilla propone `./assets/`).
 - **Lista de compra:** el estado tachado se conserva **dentro de la sesión** al cambiar de pestaña (objeto JS `shopState`), pero no entre sesiones, para evitar desincronizaciones cuando el HTML se actualiza en GitHub. Verifica en el archivo cómo está implementado antes de modificarlo; la v5.0 de referencia solo usa `classList.toggle('done')` sin memoria al cambiar de pestaña.
+- **Versión app (`index_app.html`, 19/10/2026):** copia de `index.html` con el estilo de las instrucciones app v1.0 (tokens `:root`, Inter, CSS completo de la sección 4). `index.html` (v5.0) se conserva intacto. Sin descripción del cliente, perfil de la persona ni próxima revisión (los muestra la app). Orden: h1 + subtítulo → Objetivo → Próximos eventos → Impresiones del profesional → tabla semanal → menú por días → lista de compra → suplementación → recetas → intraentreno. "Próximos eventos" se mantiene a petición de Guille. "Nutrición intraentreno — bici larga (>2h)" se mantiene como **desplegable** (`<details>` con los modelos A/B/C anidados como acordeón; se usa `<details>` porque el CSS `.pn-receta.open .pn-receta-body` abriría todos los acordeones anidados). Tabla semanal y su leyenda con el estilo original v5.0. **Todo cambio de contenido del plan (días, tabla, lista de compra, suplementación, recetas, intraentreno) hay que aplicarlo en ambos archivos** y mantenerlos coherentes. Decisión pendiente de Guille: cuál de los dos publica GitHub Pages / carga la app.
 - **Estilo alineado con v5.0 el 2/10/2026** (CSS estándar verbatim, sin `<hr>` ni `border-top`/`padding-top` en wrappers, espaciados del perfil, un único `<script>` al final, bloque "Control de peso" eliminado, leyenda en la tabla semanal). El contenido no se toca al alinear estilo: cada planificación es distinta. Ante nuevas versiones de la plantilla, alinear solo cuando Guille lo pida.
 - Incluye recetas propias en el acordeón (ensalada de cuscús con gazpacho, gazpacho de remolacha, entre otras) y una sección de hidratación/intraentreno (bici larga >2h) cuyos modelos A/B/C son **desplegables**, reutilizando las clases del acordeón de recetas (`pn-receta`, sin CSS nuevo).
 
@@ -93,7 +95,7 @@ Son decisiones conscientes de Guille; no las "corrijas" sin preguntar:
 
 - El JS valida y no hay errores de consola; las pestañas de día y de compra funcionan.
 - Segunda persona en todo texto nuevo; sin marcas de dispositivos; sin "crossfit" residual.
-- La tabla semanal (`#printArea`) y los días del array `days` coinciden entre sí.
+- La tabla semanal (`#printArea`) y los días del array `days` coinciden entre sí, y `index.html` e `index_app.html` coinciden en contenido.
 - Los enlaces a PDF abren en local y en GitHub Pages.
 - No se ha tocado nada fuera de lo pedido.
 
