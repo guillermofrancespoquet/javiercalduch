@@ -76,13 +76,9 @@ Fuente: valoración del 25/08/2026 por Guillermo Francés. Entre paréntesis, la
 
 **Métricas principales:** condición física 88,9/100 (89,5) · peso 62,70 kg (63,05), IMC 20,83, normopeso · talla/envergadura 173,5/169,5 cm, braquicórmico, E. relativa 0,98 · % masa grasa Yuhasz 8,49 % (8,88), 5,32 kg, Σ6 pliegues 50,00 mm · % masa muscular 47,72 % (47,40), 29,92 kg, Z Phantom +0,90 · LBM 55,5 kg (55,8), músculo esquelético 35,9 kg (36,1) · TMB 1.568 kcal (1.573), edad metabólica 25 años (24) · % tejido adiposo 24,12 % (25,10), 15,12 kg (Ross y Kerr, 1993) · ratio cintura/cadera 0,88 (0,93), riesgo cardiovascular bajo (antes moderado).
 
-**Somatotipo (Carter-Heath):** actual 2,23 — 2,53 — 3,39, ecto-mesomorfo. Previo (15/06/2026): 2,34 — 2,66 — 3,33 (endomorfia −0,11, mesomorfia −0,13, ectomorfia +0,06; perfil algo más lineal, vigilar que la base de fuerza no se resienta con el volumen aeróbico). Grupo de referencia ISAK 0,00 — 0,00 — 0,00 (dentro del rango normativo).
-
 **Pliegues (mm):** tríceps 10,00 (10,00) · subescapular 7,50 (7,50) · bíceps 2,00 (1,50) · cresta ilíaca 7,00 (7,00) · supraespinal 5,50 (6,50) · abdominal 12,00 (13,50) · muslo 9,00 (11,00) · pierna 6,00 (5,50) · Σ6 50,00 (54,00) · Σ8 59,00 (62,50).
 
 **Perímetros (cm):** cintura 76,90 (78,50) · cadera 87,00 (84,70) · brazo relajado/contraído 30,00/32,50 · muslo/pierna 50,54/34,70 (muslo +0,94).
-
-**Bioimpedancia:** agua corporal 40,1 L (40,3), normal · proteína 12,7 kg, normal · masa ósea 2,78 kg (2,79), deficiente · masa grasa 7,21 kg (7,31), deficiente · % grasa PBF 11,5 % (11,6), normal · músculo esquelético 35,9 kg (36,1), alto · grasa visceral nivel 3 (4), normal · fuerza superior e inferior normales · equilibrio superior e inferior levemente desequilibrados · IMC 20,7, normal. Bloque "Control de peso (objetivo)" retirado: peso deseado 65,28 kg, control de grasa +2,58 kg, control muscular +0 kg.
 
 ## Excepciones de Javier respecto a la plantilla v5.0
 
